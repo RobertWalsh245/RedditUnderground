@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0D6E46125948F0B2930F80 /* libPods-Reddit UnderGround.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E9EC52E63E4679B97B66A8 /* libPods-Reddit UnderGround.a */; };
 		5D3692BA19C49DF9001F24FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3692B919C49DF9001F24FB /* Foundation.framework */; };
 		5D3692BC19C49DF9001F24FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3692BB19C49DF9001F24FB /* CoreGraphics.framework */; };
 		5D3692BE19C49DF9001F24FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3692BD19C49DF9001F24FB /* UIKit.framework */; };
@@ -22,6 +23,22 @@
 		5D3692DE19C49DF9001F24FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3692BD19C49DF9001F24FB /* UIKit.framework */; };
 		5D3692E619C49DF9001F24FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D3692E419C49DF9001F24FB /* InfoPlist.strings */; };
 		5D3692E819C49DF9001F24FB /* Reddit_UnderGroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3692E719C49DF9001F24FB /* Reddit_UnderGroundTests.m */; };
+		5D3692F319C4ABBF001F24FB /* TabbedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3692F219C4ABBF001F24FB /* TabbedViewController.m */; };
+		5D3692F619C4B8E2001F24FB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3692F519C4B8E2001F24FB /* WebViewController.m */; };
+		5D3692F819C4D796001F24FB /* subway.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3692F719C4D796001F24FB /* subway.png */; };
+		5D3692FA19C4D9CC001F24FB /* PickleDance.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3692F919C4D9CC001F24FB /* PickleDance.png */; };
+		5D3692FC19C4DABB001F24FB /* subway2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5D3692FB19C4DABB001F24FB /* subway2.JPG */; };
+		5D36936F19CA0186001F24FB /* SubredditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D36936E19CA0186001F24FB /* SubredditTableViewCell.m */; };
+		5D36937119CA17CA001F24FB /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D36937019CA17CA001F24FB /* check.png */; };
+		5D36937319CA33FA001F24FB /* darkicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D36937219CA33FA001F24FB /* darkicon.png */; };
+		5D36937719CA3658001F24FB /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D36937419CA3658001F24FB /* Icon-40@2x.png */; };
+		5D36937819CA3658001F24FB /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D36937519CA3658001F24FB /* Icon-60@2x.png */; };
+		5D36937919CA3658001F24FB /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D36937619CA3658001F24FB /* Icon-Small@2x.png */; };
+		5D36937B19CA3B1F001F24FB /* rocko-flf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D36937A19CA3A0D001F24FB /* rocko-flf.otf */; };
+		5D36937F19CA3EB1001F24FB /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D36937E19CA3EB1001F24FB /* black.png */; };
+		5D36938619CF71D5001F24FB /* DatabaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D36938519CF71D5001F24FB /* DatabaseModel.m */; };
+		5D5BA10619F3EFF700A8C771 /* ThreadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BA10519F3EFF700A8C771 /* ThreadsViewController.m */; };
+		5D5BA10919F3F52100A8C771 /* ThreadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BA10819F3F52100A8C771 /* ThreadTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +72,30 @@
 		5D3692E319C49DF9001F24FB /* Reddit UnderGroundTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reddit UnderGroundTests-Info.plist"; sourceTree = "<group>"; };
 		5D3692E519C49DF9001F24FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5D3692E719C49DF9001F24FB /* Reddit_UnderGroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reddit_UnderGroundTests.m; sourceTree = "<group>"; };
+		5D3692F119C4ABBF001F24FB /* TabbedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbedViewController.h; sourceTree = "<group>"; };
+		5D3692F219C4ABBF001F24FB /* TabbedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbedViewController.m; sourceTree = "<group>"; };
+		5D3692F419C4B8E2001F24FB /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		5D3692F519C4B8E2001F24FB /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		5D3692F719C4D796001F24FB /* subway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subway.png; sourceTree = "<group>"; };
+		5D3692F919C4D9CC001F24FB /* PickleDance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickleDance.png; sourceTree = "<group>"; };
+		5D3692FB19C4DABB001F24FB /* subway2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = subway2.JPG; sourceTree = "<group>"; };
+		5D36936D19CA0186001F24FB /* SubredditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubredditTableViewCell.h; sourceTree = "<group>"; };
+		5D36936E19CA0186001F24FB /* SubredditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubredditTableViewCell.m; sourceTree = "<group>"; };
+		5D36937019CA17CA001F24FB /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		5D36937219CA33FA001F24FB /* darkicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darkicon.png; sourceTree = "<group>"; };
+		5D36937419CA3658001F24FB /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		5D36937519CA3658001F24FB /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		5D36937619CA3658001F24FB /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		5D36937A19CA3A0D001F24FB /* rocko-flf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "rocko-flf.otf"; sourceTree = "<group>"; };
+		5D36937E19CA3EB1001F24FB /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
+		5D36938519CF71D5001F24FB /* DatabaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseModel.m; sourceTree = "<group>"; };
+		5D36938719CF71DF001F24FB /* DatabaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseModel.h; sourceTree = "<group>"; };
+		5D5BA10419F3EFF700A8C771 /* ThreadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadsViewController.h; sourceTree = "<group>"; };
+		5D5BA10519F3EFF700A8C771 /* ThreadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadsViewController.m; sourceTree = "<group>"; };
+		5D5BA10719F3F52100A8C771 /* ThreadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadTableViewCell.h; sourceTree = "<group>"; };
+		5D5BA10819F3F52100A8C771 /* ThreadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadTableViewCell.m; sourceTree = "<group>"; };
+		78E9EC52E63E4679B97B66A8 /* libPods-Reddit UnderGround.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reddit UnderGround.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C77EA99518FA4341B376AF6E /* Pods-Reddit UnderGround.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reddit UnderGround.xcconfig"; path = "Pods/Pods-Reddit UnderGround.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +106,7 @@
 				5D3692BC19C49DF9001F24FB /* CoreGraphics.framework in Frameworks */,
 				5D3692BE19C49DF9001F24FB /* UIKit.framework in Frameworks */,
 				5D3692BA19C49DF9001F24FB /* Foundation.framework in Frameworks */,
+				1D0D6E46125948F0B2930F80 /* libPods-Reddit UnderGround.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +130,7 @@
 				5D3692E119C49DF9001F24FB /* Reddit UnderGroundTests */,
 				5D3692B819C49DF9001F24FB /* Frameworks */,
 				5D3692B719C49DF9001F24FB /* Products */,
+				C77EA99518FA4341B376AF6E /* Pods-Reddit UnderGround.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +150,7 @@
 				5D3692BB19C49DF9001F24FB /* CoreGraphics.framework */,
 				5D3692BD19C49DF9001F24FB /* UIKit.framework */,
 				5D3692DB19C49DF9001F24FB /* XCTest.framework */,
+				78E9EC52E63E4679B97B66A8 /* libPods-Reddit UnderGround.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,9 +161,16 @@
 				5D3692C819C49DF9001F24FB /* RedditUnderGroundAppDelegate.h */,
 				5D3692C919C49DF9001F24FB /* RedditUnderGroundAppDelegate.m */,
 				5D3692CB19C49DF9001F24FB /* Main_iPhone.storyboard */,
-				5D3692CE19C49DF9001F24FB /* Main_iPad.storyboard */,
+				5D36938319CF7017001F24FB /* ViewControllers */,
+				5D5BA10419F3EFF700A8C771 /* ThreadsViewController.h */,
+				5D5BA10519F3EFF700A8C771 /* ThreadsViewController.m */,
 				5D3692D119C49DF9001F24FB /* RedditUnderGroundViewController.h */,
 				5D3692D219C49DF9001F24FB /* RedditUnderGroundViewController.m */,
+				5D3692F119C4ABBF001F24FB /* TabbedViewController.h */,
+				5D3692F219C4ABBF001F24FB /* TabbedViewController.m */,
+				5D3692F419C4B8E2001F24FB /* WebViewController.h */,
+				5D3692F519C4B8E2001F24FB /* WebViewController.m */,
+				5D36938419CF702D001F24FB /* Other */,
 				5D3692D419C49DF9001F24FB /* Images.xcassets */,
 				5D3692C019C49DF9001F24FB /* Supporting Files */,
 			);
@@ -129,6 +180,16 @@
 		5D3692C019C49DF9001F24FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D36937E19CA3EB1001F24FB /* black.png */,
+				5D36937A19CA3A0D001F24FB /* rocko-flf.otf */,
+				5D36937419CA3658001F24FB /* Icon-40@2x.png */,
+				5D36937519CA3658001F24FB /* Icon-60@2x.png */,
+				5D36937619CA3658001F24FB /* Icon-Small@2x.png */,
+				5D36937219CA33FA001F24FB /* darkicon.png */,
+				5D36937019CA17CA001F24FB /* check.png */,
+				5D3692FB19C4DABB001F24FB /* subway2.JPG */,
+				5D3692F919C4D9CC001F24FB /* PickleDance.png */,
+				5D3692F719C4D796001F24FB /* subway.png */,
 				5D3692C119C49DF9001F24FB /* Reddit UnderGround-Info.plist */,
 				5D3692C219C49DF9001F24FB /* InfoPlist.strings */,
 				5D3692C519C49DF9001F24FB /* main.m */,
@@ -155,6 +216,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5D36938319CF7017001F24FB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5D36938419CF702D001F24FB /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				5D36938719CF71DF001F24FB /* DatabaseModel.h */,
+				5D36938519CF71D5001F24FB /* DatabaseModel.m */,
+				5D3692CE19C49DF9001F24FB /* Main_iPad.storyboard */,
+				5D36936D19CA0186001F24FB /* SubredditTableViewCell.h */,
+				5D36936E19CA0186001F24FB /* SubredditTableViewCell.m */,
+				5D5BA10719F3F52100A8C771 /* ThreadTableViewCell.h */,
+				5D5BA10819F3F52100A8C771 /* ThreadTableViewCell.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D3692EB19C49DF9001F24FB /* Build configuration list for PBXNativeTarget "Reddit UnderGround" */;
 			buildPhases = (
+				321B9A5235864336928A0FA0 /* Check Pods Manifest.lock */,
 				5D3692B219C49DF9001F24FB /* Sources */,
 				5D3692B319C49DF9001F24FB /* Frameworks */,
 				5D3692B419C49DF9001F24FB /* Resources */,
+				5816DA123C754537A7F9EA42 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,10 +316,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D36937B19CA3B1F001F24FB /* rocko-flf.otf in Resources */,
+				5D36937F19CA3EB1001F24FB /* black.png in Resources */,
+				5D3692FC19C4DABB001F24FB /* subway2.JPG in Resources */,
 				5D3692D019C49DF9001F24FB /* Main_iPad.storyboard in Resources */,
+				5D36937119CA17CA001F24FB /* check.png in Resources */,
+				5D3692FA19C4D9CC001F24FB /* PickleDance.png in Resources */,
+				5D36937819CA3658001F24FB /* Icon-60@2x.png in Resources */,
 				5D3692D519C49DF9001F24FB /* Images.xcassets in Resources */,
 				5D3692CD19C49DF9001F24FB /* Main_iPhone.storyboard in Resources */,
+				5D3692F819C4D796001F24FB /* subway.png in Resources */,
+				5D36937319CA33FA001F24FB /* darkicon.png in Resources */,
+				5D36937919CA3658001F24FB /* Icon-Small@2x.png in Resources */,
 				5D3692C419C49DF9001F24FB /* InfoPlist.strings in Resources */,
+				5D36937719CA3658001F24FB /* Icon-40@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,13 +343,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		321B9A5235864336928A0FA0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5816DA123C754537A7F9EA42 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Reddit UnderGround-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D3692B219C49DF9001F24FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D36938619CF71D5001F24FB /* DatabaseModel.m in Sources */,
 				5D3692CA19C49DF9001F24FB /* RedditUnderGroundAppDelegate.m in Sources */,
+				5D5BA10619F3EFF700A8C771 /* ThreadsViewController.m in Sources */,
+				5D3692F619C4B8E2001F24FB /* WebViewController.m in Sources */,
+				5D36936F19CA0186001F24FB /* SubredditTableViewCell.m in Sources */,
 				5D3692C619C49DF9001F24FB /* main.m in Sources */,
+				5D3692F319C4ABBF001F24FB /* TabbedViewController.m in Sources */,
+				5D5BA10919F3F52100A8C771 /* ThreadTableViewCell.m in Sources */,
 				5D3692D319C49DF9001F24FB /* RedditUnderGroundViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +521,7 @@
 		};
 		5D3692EC19C49DF9001F24FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C77EA99518FA4341B376AF6E /* Pods-Reddit UnderGround.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -401,6 +535,7 @@
 		};
 		5D3692ED19C49DF9001F24FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C77EA99518FA4341B376AF6E /* Pods-Reddit UnderGround.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -471,6 +606,7 @@
 				5D3692ED19C49DF9001F24FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D3692EE19C49DF9001F24FB /* Build configuration list for PBXNativeTarget "Reddit UnderGroundTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +615,7 @@
 				5D3692F019C49DF9001F24FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
