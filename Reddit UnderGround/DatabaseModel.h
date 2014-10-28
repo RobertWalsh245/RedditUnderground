@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSMutableArray *ActiveThreads;
 @property (nonatomic, retain) NSMutableArray *LoadedWebViews;
 
-
+@property (nonatomic, retain) NSMutableArray *LoadedComments;
 
 -(NSString *) GetCurrentDateAndTime;
 

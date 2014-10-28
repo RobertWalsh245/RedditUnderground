@@ -25,7 +25,12 @@
     }
     return _ActiveTabs;
 }
-
+-(NSMutableArray *) LoadedComments{
+    if (!_LoadedComments) {
+        _LoadedComments = [[NSMutableArray alloc]init];
+    }
+    return _LoadedComments;
+}
 -(NSMutableArray *) ActiveThreads{
     if (!_ActiveThreads) {
         _ActiveThreads = [[NSMutableArray alloc]init];

@@ -135,8 +135,8 @@ int Returned;
      name:@"retrievedlinks"
      object:nil ];
     
-    [self LogIntoRedditWithUser: @"RedditUNDG" WithPassword:@"London12"];
-   
+    //[self LogIntoRedditWithUser: @"RedditUNDG" WithPassword:@"London12"];
+    [self LogIntoRedditWithUser: @"imposter24" WithPassword:@"Rwlax245"];
     
     
     [self.tblReddits setDelegate:self];
@@ -207,13 +207,15 @@ int Returned;
     [self.btnLoad setEnabled:NO];
     //Tell user you are loading the subreddit data
     
-    //Add 1 to the count of reddits searching for links
-    Searching++;
+    
     
     //Check to see if subreddit already in dictionary
         if([[self LinksDictionary] objectForKey:subredditName] == nil) {
             //The subreddit does not exist in our dictionary
            //Get links for subreddit
+            //Add 1 to the count of reddits searching for links
+            Searching++;
+            
         [[RKClient sharedClient] linksInSubredditWithName:subredditName pagination:nil completion:^(NSArray *links, RKPagination *pagination, NSError *error) {
             NSLog(@"Retrieved %lu Links from /r/%@: ",(unsigned long)[links count], subredditName);
             
@@ -302,15 +304,12 @@ int Returned;
     for (int i=0; i<[self.SelectedSubreddits count]; i++) {
         for (int x=1; x<4; x++) {
            
-            //Access the array of links sitting in the dictionary for the given subreddit and assign the top URL
+        //Access the array of links sitting in the dictionary for the given subreddit and assign the top URL
         link = self.LinksDictionary[self.SelectedSubreddits[i]][x];
         NSString *path = [link.URL absoluteString];
         
-        //NSLog(path);
-        //If the link isn't a comment thread, skip
-        //Should be a way to check for self post in the api
-        if ([path rangeOfString:@"/comments/"].location == NSNotFound) {
-        }else{
+        //if ([path rangeOfString:@"/comments/"].location == NSNotFound) {
+        //}else{
             //Link is a reddit thread link
             //Add this Link to the Threads array to be loaded by the next view controller
             NSLog(path);
@@ -320,14 +319,11 @@ int Returned;
             }else{
                 [[[DatabaseModel sharedManager] ActiveThreads] addObject:link];
             }
-        }
+       // }
             
             
     }
         
-        
-        
-    
     }
     ThreadsViewController *threadsViewController = threadsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"threadsViewController"];
     
