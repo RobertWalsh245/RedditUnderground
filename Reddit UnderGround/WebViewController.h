@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface WebViewController : UIViewController
-@property (weak, nonatomic) NSString *URL;
-@property (weak, nonatomic) NSString *ThreadName;
-@property (weak, nonatomic) NSString *Subreddit;
+@property (strong, nonatomic) NSString *URL;
+@property (strong, nonatomic) NSString *ThreadName;
+@property (strong, nonatomic) NSString *Subreddit;
 @property (strong, nonatomic) UIWebView *wv;
+
+
 @end

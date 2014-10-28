@@ -23,7 +23,8 @@
 @synthesize imgLoad;
 @synthesize lblStatus;
 bool NeedSubreddits;
-
+int Searching;
+int Returned;
 
 @synthesize tblReddits = _tblReddits;
 -(UITableView *) tblReddits{
@@ -74,6 +75,10 @@ bool NeedSubreddits;
     return _SelectedSubreddits;
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    self.navigationController.navigationBar.hidden = YES;
+}
 
 - (void)viewDidLoad
 {
@@ -81,9 +86,26 @@ bool NeedSubreddits;
 	// Do any additional setup after loading the view, typically from a nib.
     
   // self.tabBarController.tabBar.hidden = YES;
+    
+     [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.navigationController.navigationBar.hidden = YES;
-    [self.navigationController.navigationBar setBarTintColor:[UIColor grayColor]];
-    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor scrollViewTexturedBackgroundColor]];
+    [self.navigationController.navigationBar setTranslucent:YES];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor scrollViewTexturedBackgroundColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIColor whiteColor],UITextAttributeTextColor,
+                                               [UIColor blackColor], UITextAttributeTextShadowColor,
+                                               [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset, nil];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
+    barButton.title = @"";
+    
+    self.navigationItem.backBarButtonItem = barButton;
     
     lblTitle.font = [UIFont fontWithName:@"rocko-flf" size:22];
     
@@ -185,19 +207,29 @@ bool NeedSubreddits;
     [self.btnLoad setEnabled:NO];
     //Tell user you are loading the subreddit data
     
-    //Check to see if subreddit already in dictionary
+    //Add 1 to the count of reddits searching for links
+    Searching++;
     
-    //Get links for subreddit
+    //Check to see if subreddit already in dictionary
+        if([[self LinksDictionary] objectForKey:subredditName] == nil) {
+            //The subreddit does not exist in our dictionary
+           //Get links for subreddit
         [[RKClient sharedClient] linksInSubredditWithName:subredditName pagination:nil completion:^(NSArray *links, RKPagination *pagination, NSError *error) {
             NSLog(@"Retrieved %lu Links from /r/%@: ",(unsigned long)[links count], subredditName);
             
             // Add subreddit links to dictionary
             //subredditName = Key, links = Object to store
             self.LinksDictionary[subredditName] = links;
+            Returned++;
             
+            if (Searching == Returned) {
             //Reactivate Load Button
             [self.btnLoad setEnabled:YES];
-        }];
+            }
+           
+            }];
+
+        }
 }
 
 - (void)didReceiveMemoryWarning
@@ -253,28 +285,9 @@ bool NeedSubreddits;
     
     Tab.wv = webview;
     
-    
-    
-    
     [[[DatabaseModel sharedManager] ActiveTabs] addObject:Tab];
     [self.tabBarController setViewControllers:[[DatabaseModel sharedManager] ActiveTabs]];
     self.tabBarController.selectedIndex = [[[DatabaseModel sharedManager] ActiveTabs] count];
-    
-}
-
-
-
--(void)UpdateLinksOfSelections {
-        // Loop through library of links and see if we have already fetched the links for each subreddit the user wants to load
-    //If we don't have the links, call method to retrieve links (which adds to dictionary)
-    
-    for (int i=0; i<= [self.SelectedSubreddits count]-1; i++) {
-        if([[self LinksDictionary] objectForKey:self.SelectedSubreddits[i]] == nil) {
-            //The subreddit does not exist in our dictionary
-            [self GetTopLinksOfSubreddit:self.SelectedSubreddits[i]];
-        }
-    }
-
     
 }
 
@@ -326,6 +339,9 @@ bool NeedSubreddits;
 //////////////Table View Methods //////////////////
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     SubredditTableViewCell *cell;
     cell = [tableView cellForRowAtIndexPath:indexPath];
 
@@ -337,7 +353,7 @@ bool NeedSubreddits;
                 self.CheckedCells[indexPath.row] = @"YES";
                 //Add the subreddit name from the selected cell to our selected array
                 [[self SelectedSubreddits] addObject:cell.lblSubredditName.text];
-                [self UpdateLinksOfSelections];
+                [self GetTopLinksOfSubreddit:cell.lblSubredditName.text];
             }
         }else{
             //Tag as unchecked
@@ -416,6 +432,20 @@ bool NeedSubreddits;
     //Hide load things
     self.lblStatus.hidden = YES;
     self.imgLoad.hidden = YES;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.5];
+    [self.tblReddits setAlpha:0];
+    [self.btnLoad setAlpha:0];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
+    [self.tblReddits setHidden:NO];
+    [self.tblReddits setAlpha:1];
+    [self.btnLoad setHidden:NO];
+    [self.btnLoad setAlpha:1];
+    
+    [UIView commitAnimations];
+    
     
 }
 -(void)RetrievedLinksWasNotified: (NSNotification *) notification

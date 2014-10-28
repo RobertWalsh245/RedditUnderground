@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSMutableArray *ActiveThreads;
 @property (nonatomic, retain) NSMutableArray *LoadedWebViews;
 
+
+
 -(NSString *) GetCurrentDateAndTime;
 
 + (id)sharedManager;

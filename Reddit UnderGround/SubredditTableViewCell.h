@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SubredditTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *lblSubredditName;
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (strong, nonatomic) IBOutlet UILabel *lblSubredditName;
+@property (strong, nonatomic) IBOutlet UIImageView *image;
 @property (nonatomic, assign) BOOL selected;
 
 @end

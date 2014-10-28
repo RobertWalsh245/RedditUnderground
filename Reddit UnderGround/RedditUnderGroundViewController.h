@@ -20,6 +20,6 @@
 @property(strong, nonatomic)NSMutableArray *CheckedCells;
 @property(strong, nonatomic)NSMutableArray *ActiveTabs;
 @property(strong, nonatomic)NSMutableDictionary *LinksDictionary;
-@property (weak, nonatomic) IBOutlet UIButton *btnLoad;
+@property (strong, nonatomic) IBOutlet UIButton *btnLoad;
 
 @end
