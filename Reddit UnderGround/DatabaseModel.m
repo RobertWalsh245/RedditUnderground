@@ -44,6 +44,7 @@
     return _LoadedWebViews;
 }
 
+
 #pragma mark Singleton Methods
 
 + (id)sharedManager {
@@ -66,7 +67,25 @@
     // Should never be called, but just here for clarity really.
 }
 
+-(void) setRefresh:(bool)Refresh {
+    _Refresh = Refresh;
+}
+-(void) setCustomUser:(NSString *)CustomUser {
+    _CustomUser = CustomUser;
+}
+-(NSString *) getCustomUser {
+   return  _CustomUser;
+}
+-(BOOL) getRefresh {
+    return  _Refresh;
+}
 
+-(void) setNumberOfSubreddits:(int)NumberOfSubreddits {
+    _NumberOfSubreddits = NumberOfSubreddits;
+}
+-(void) setNumberOfThreads:(int)NumberOfThreads{
+    _NumberOfThreads = NumberOfThreads;
+}
 
 -(NSString *) GetCurrentDateAndTime {
     // Get current date time

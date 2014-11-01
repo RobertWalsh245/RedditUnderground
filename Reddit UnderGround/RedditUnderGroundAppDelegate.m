@@ -7,6 +7,7 @@
 //
 
 #import "RedditUnderGroundAppDelegate.h"
+#import "DatabaseModel.h"
 
 @implementation RedditUnderGroundAppDelegate
 
@@ -14,6 +15,7 @@
 {
     // Override point for customization after application launch.
     return YES;
+    
     
     
 }

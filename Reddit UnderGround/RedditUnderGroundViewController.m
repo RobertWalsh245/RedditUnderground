@@ -26,7 +26,25 @@ bool NeedSubreddits;
 int Searching;
 int Returned;
 
+@synthesize lblThreads;
+@synthesize SettingsView;
+@synthesize txtUsername;
+@synthesize txtPassword;
 @synthesize tblReddits = _tblReddits;
+
+-(ThreadsViewController *) threadsviewcontroller{
+    if (!_ThreadsViewController) {
+        _ThreadsViewController = [[ThreadsViewController alloc]init];
+    }
+    return _ThreadsViewController;
+}
+-(UISlider *) sldThreads{
+    if (!_sldThreads) {
+        _sldThreads = [[UISlider alloc]init];
+    }
+    return _sldThreads;
+}
+
 -(UITableView *) tblReddits{
     if (!_tblReddits) {
         _tblReddits = [[UITableView alloc]init];
@@ -76,8 +94,15 @@ int Returned;
 }
 
 - (void) viewWillAppear:(BOOL)animated{
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-    self.navigationController.navigationBar.hidden = YES;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    //self.navigationController.navigationBar.hidden = YES;
+    
+    [UIView commitAnimations];
+
 }
 
 - (void)viewDidLoad
@@ -86,6 +111,23 @@ int Returned;
 	// Do any additional setup after loading the view, typically from a nib.
     
   // self.tabBarController.tabBar.hidden = YES;
+    
+   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.SettingsView addGestureRecognizer:tap];
+
+    
+    // Round corners using CALayer property
+    [[self.SettingsView layer] setCornerRadius:10];
+    [self.SettingsView setClipsToBounds:YES];
+    
+    // Create colored border using CALayer property
+    [[self.SettingsView layer] setBorderColor:
+     
+     [[UIColor colorWithRed:159.0f/255.0f green:156.0f/255.0f blue:156.0f/255.0f alpha:1.0] CGColor]];
+    [[self.SettingsView layer] setBorderWidth:1.75];
+    
     
      [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.navigationController.navigationBar.hidden = YES;
@@ -125,6 +167,12 @@ int Returned;
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
+     selector:@selector(SignInFailedWasNotified:)
+     name:@"signinfailed"
+     object:nil ];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
      selector:@selector(SubredditsRetrievedWasNotified:)
      name:@"subredditsretrieved"
      object:nil ];
@@ -135,39 +183,78 @@ int Returned;
      name:@"retrievedlinks"
      object:nil ];
     
-    //[self LogIntoRedditWithUser: @"RedditUNDG" WithPassword:@"London12"];
-    [self LogIntoRedditWithUser: @"imposter24" WithPassword:@"Rwlax245"];
+    //Log into reddit
+    //If there are no saved user details
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"username"] == nil) {
+        //Login as the default profile
+        [self LogIntoRedditWithUser: @"RedditUNDG" WithPassword:@"London12"];
+    }else{
+        //Log in as the saved username/pword
+        [self LogIntoRedditWithUser: [[NSUserDefaults standardUserDefaults] objectForKey:@"username"] WithPassword:[[NSUserDefaults standardUserDefaults] objectForKey:@"password"]];
+        //Set txtboxes with info
+        txtUsername.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+        txtPassword.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    }
+    
+    //Set Number of threads
+    [self LoadThreadsSettings];
     
     
     [self.tblReddits setDelegate:self];
     [self.tblReddits setDataSource:self];
     [self.tblReddits setAllowsSelection:YES];
     
-    
-    
-    
-    
 }
 
 
-
-//etrivePictures: (int) amount WithFilter: (NSString*) filter FromController: (NSString*) controller{
 
 -(void)LogIntoRedditWithUser: (NSString*) user WithPassword: (NSString*) password  {
    // dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     lblStatus.text = @"Logging into Reddit...";
     
-    [[RKClient sharedClient] signInWithUsername:user password:password completion:^(NSError *error) {
-        if (!error)
-        {
-            NSLog(@"Successfully signed in as %@", user);
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"signedin" object:self];
-        }
+    
+    //if There is a user signed in
+    if ([[RKClient sharedClient] isSignedIn]) {
+        //If that user doesn't match who we want to be signed in
+        if (![[RKClient sharedClient].currentUser.username isEqualToString:user]) {
+            //Log out the current user
+            [[RKClient sharedClient] signOut];
+            NSLog(@"Attempting to sign in as %@", user);
+            //Sign in
+            [[RKClient sharedClient] signInWithUsername:user password:password completion:^(NSError *error) {
+                if (!error)
+                {
+                    NSLog(@"Successfully signed in as %@", user);
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"signedin" object:self];
+            
+                }else{
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"signinfailed" object:self];
+                }
         
-    }];
-    // dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+                }];
+            
+                }
+    }else{
+        //There is no user signed in. Sign in
+        NSLog(@"Attempting to sign in as %@", user);
+        //Sign in
+        [[RKClient sharedClient] signInWithUsername:user password:password completion:^(NSError *error) {
+            if (!error)
+            {
+                NSLog(@"Successfully signed in as %@", user);
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"signedin" object:self];
+                
+            }else{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"signinfailed" object:self];
+            }
+            
+        }];
+        
+    }
+    
 }
+
 
 
 
@@ -293,6 +380,10 @@ int Returned;
     
 }
 
+
+//Keep seperate array of links that have been loaded in the session
+//Allow user to check whether they want to load the top threads or new threads
+
 - (IBAction)LoadPressed:(id)sender {
     
     [[[DatabaseModel sharedManager] ActiveThreads] removeAllObjects];
@@ -302,15 +393,28 @@ int Returned;
     //For each selected subreddit, Create a tab for each top link
     //[self.SelectedSubreddits count]
     for (int i=0; i<[self.SelectedSubreddits count]; i++) {
-        for (int x=1; x<4; x++) {
+        
+        //change this to while that only breaks after either its loaded the right num of threads or it's search x amount of threads
+        int x = 0;
+        while (x !=[[DatabaseModel sharedManager] NumberOfThreads]) {
+            
+        }
+        
+        
+        
+        for (int x=0; x<[[DatabaseModel sharedManager] NumberOfThreads]; x++) {
            
         //Access the array of links sitting in the dictionary for the given subreddit and assign the top URL
         link = self.LinksDictionary[self.SelectedSubreddits[i]][x];
-        NSString *path = [link.URL absoluteString];
+        //Check if link is a sticky, if it is get a new link to load
+        if (link.stickied) {
+            //Don't load, instead load an extra thread further down the subreddit
+            //Set link as the next thread after the limit specified by the user
+            link = self.LinksDictionary[self.SelectedSubreddits[i]][[[DatabaseModel sharedManager] NumberOfThreads]];
+        }
+            
+            NSString *path = [link.URL absoluteString];
         
-        //if ([path rangeOfString:@"/comments/"].location == NSNotFound) {
-        //}else{
-            //Link is a reddit thread link
             //Add this Link to the Threads array to be loaded by the next view controller
             NSLog(path);
             
@@ -319,15 +423,40 @@ int Returned;
             }else{
                 [[[DatabaseModel sharedManager] ActiveThreads] addObject:link];
             }
-       // }
-            
             
     }
         
     }
-    ThreadsViewController *threadsViewController = threadsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"threadsViewController"];
     
-    [self.navigationController pushViewController:threadsViewController animated:YES];
+    if ([[[DatabaseModel sharedManager] ActiveThreads] count] > 0) {
+        ThreadsViewController *threadsViewController;
+        self.ThreadsViewController = threadsViewController;
+        self.ThreadsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"threadsViewController"];
+        
+        [[DatabaseModel sharedManager] setRefresh:YES];
+        [self.navigationController pushViewController:self.ThreadsViewController animated:YES];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.navigationController.navigationBar.hidden = NO;
+    }else{
+        //We don't have any threads. Don't load next view. Tell user
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Something went wrong when trying to load from the selected subreddits.  Please wait a minute then try again" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+        [alert show];
+
+    }
+    
+
+    
+    
+}
+- (IBAction)ThreadsPressed:(id)sender {
+    //Check if we have threads loaded, if so push the vc
+    if (self.ThreadsViewController != nil) {
+        //self.ThreadsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"threadsViewController"];
+        [self.navigationController pushViewController:self.ThreadsViewController animated:YES];
+        [[DatabaseModel sharedManager] setRefresh:NO];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.navigationController.navigationBar.hidden = NO;
+    }
     
     
 }
@@ -401,10 +530,85 @@ int Returned;
     //return 1;
 }
 
+/////////Settings Methods//////////
+- (IBAction)SettingsPressed:(id)sender {
+    //Toggle diaply of settings view
+    
+    //If settings is hidden off screen
+    if (self.SettingsView.frame.origin.y == 1000) {
+        //Animate view onto screen
+        [UIView animateWithDuration:0.4 animations:^{
+        self.SettingsView.frame = CGRectMake(0, 127, 320, 441);
+        }];
+    }else{
+        //Animate off screen
+        [UIView animateWithDuration:0.4 animations:^{
+            self.SettingsView.frame = CGRectMake(0, 1000, 320, 441);
+        }];
+    }
+    
+    
+}
+
+- (IBAction)LogInPressed:(id)sender {
+    //Check txt boxes have entered text
+    if (txtPassword.text.length > 0 && txtUsername.text.length > 0) {
+        //Try to log in with the entries
+        [self LogIntoRedditWithUser:txtUsername.text WithPassword:txtPassword.text];
+    }
+    
+    //Commit details to NS User defaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:txtUsername.text forKey:@"username"];
+    [userDefaults setObject:txtPassword.text forKey:@"password"];
+    [userDefaults synchronize];
+    
+}
+
+-(void)dismissKeyboard{
+    [txtUsername resignFirstResponder];
+    [txtPassword resignFirstResponder];
+}
 
 
+- (IBAction)threadsValueChanged:(id)sender {
+    //Update the # of threads to load label and property
+    //Convert float to int
+    int intValue = roundl(self.sldThreads.value);
+    NSString *str = [NSString stringWithFormat:@"%d", intValue];
+    lblThreads.text = str;
+    [[DatabaseModel sharedManager] setNumberOfThreads:self.sldThreads.value];
+    //Commit details to NS User defaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:str forKey:@"numberofthreads"];
+    [userDefaults synchronize];
+}
 
 
+-(void) LoadThreadsSettings {
+    //Set Number of threads
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"numberofthreads"] == nil) {
+        //Set up with default value of 3
+        //Update the # of threads to load label and property
+        self.sldThreads.value = 3;
+        int intValue = roundl(self.sldThreads.value);
+        NSString *str = [NSString stringWithFormat:@"%d", intValue];
+        lblThreads.text = str;
+        [[DatabaseModel sharedManager] setNumberOfThreads:self.sldThreads.value];
+        //Commit details to NS User defaults
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:str forKey:@"numberofthreads"];
+        [userDefaults synchronize];
+        
+    }else{
+        //Set their defaults
+        NSString *str = [[NSUserDefaults standardUserDefaults] objectForKey:@"numberofthreads"];
+        float flt = [str floatValue];
+        self.sldThreads.value = flt;
+        lblThreads.text = str;
+        [[DatabaseModel sharedManager] setNumberOfThreads:flt];
+    }
+}
 
 
 
@@ -414,9 +618,23 @@ int Returned;
 {
     NSLog(@"Sign in was notified");
     lblStatus.text = @"Login succesful";
+    //Flag whether we are logged in default or as a custom user
+    if ([[RKClient sharedClient].currentUser.username isEqualToString:@"RedditUNDG"]) {
+        //[[DatabaseModel sharedManager]
+        
+    }
+    
     if (NeedSubreddits) {
         [self GetSubscribedSubreddits];
     }
+}
+-(void)SignInFailedWasNotified: (NSNotification *) notification
+{
+    NSLog(@"Sign in failed");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Unable to log into Reddit.  Check that your username and password are correct on the settings tab" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    [alert show];
+    //Log in as default user
+    //[self LogIntoRedditWithUser: @"RedditUNDG" WithPassword:@"London12"];
 }
 -(void)SubredditsRetrievedWasNotified: (NSNotification *) notification
 {

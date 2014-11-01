@@ -10,9 +10,12 @@
 #import "TabbedViewController.h"
 #import "RedditKit.h"
 #import "SubredditTableViewCell.h"
+#import "ThreadsViewController.h"
 @interface RedditUnderGroundViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
 @property (strong, nonatomic) IBOutlet UIImageView *imgLoad;
+@property (strong, nonatomic) IBOutlet UILabel *lblThreads;
+@property (strong, nonatomic) IBOutlet UISlider *sldThreads;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblStatus;
 @property(strong, nonatomic)NSMutableArray *SubscribedSubreddits;
@@ -21,5 +24,12 @@
 @property(strong, nonatomic)NSMutableArray *ActiveTabs;
 @property(strong, nonatomic)NSMutableDictionary *LinksDictionary;
 @property (strong, nonatomic) IBOutlet UIButton *btnLoad;
+@property (strong, nonatomic) IBOutlet UITextField *txtUsername;
+
+@property (strong, nonatomic) IBOutlet UITextField *txtPassword;
+
+@property (strong, nonatomic) IBOutlet UIView *SettingsView;
+
+@property (nonatomic, strong) ThreadsViewController *ThreadsViewController;
 
 @end

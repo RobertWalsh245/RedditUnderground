@@ -40,15 +40,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.navigationController.navigationBar.hidden = NO;
     
     UIBarButtonItem *swapButton = [[UIBarButtonItem alloc] initWithTitle:@"Swap" style:UIBarButtonItemStylePlain target:self action:@selector(Swap:)];
     self.navigationItem.rightBarButtonItem = swapButton;
     
     
-     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.navigationController.navigationBar.hidden = NO;
-    [[[DatabaseModel sharedManager] LoadedWebViews] removeAllObjects];
-    //self.tblThreads.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tblThreads.bounds.size.width, 0.01f)];
+            //self.tblThreads.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tblThreads.bounds.size.width, 0.01f)];
     
     
     self.tblThreads.backgroundView = nil;
@@ -79,19 +78,37 @@
     //Links array is loaded into table view. When cell is selected corresponding indexpath.row in comments array is animated simultaneously with link.
     //Toggle button on Nav controller swaps the Hidden property of the displayed thread
     
+    if ([[DatabaseModel sharedManager] Refresh]) {
+        [self SetUpWebViews];
+    }
     
+    //Display first thread
+    UIWebView *FirstThread;
+    
+    //Check if this is a string
+    if ([[[DatabaseModel sharedManager] LoadedComments] count] >0) {
+        if ([[[DatabaseModel sharedManager] LoadedComments][0] isKindOfClass:[NSString class]]) {
+        }else{
+            FirstThread = [[DatabaseModel sharedManager] LoadedComments][0];
+            [self AnimateWebView:FirstThread OntoScreen:YES];
+        }
+    }
+    FirstThread = [[DatabaseModel sharedManager] LoadedWebViews][0];
+    [self AnimateWebView:FirstThread OntoScreen:YES];
+    
+
+}
+
+-(void) SetUpWebViews {
+    [[[DatabaseModel sharedManager] LoadedWebViews] removeAllObjects];
+    [[[DatabaseModel sharedManager] LoadedComments] removeAllObjects];
     RKLink *link;
-//Loop through thread links and load each in a web view
+    //Loop through thread links and load each in a web view
     for (int i = 0; i< [[[DatabaseModel sharedManager] ActiveThreads] count]; i++) {
         
         link = [[DatabaseModel sharedManager] ActiveThreads] [i];
         
-        NSString *temp = [link.URL path];
-        NSLog(temp);
-        temp = [link.permalink path];
-        NSLog(temp);
-        
-      //Create link web view
+        //Create link web view
         UIWebView *wv = [[UIWebView alloc] initWithFrame:CGRectMake(500,30,319, 383)];
         wv.delegate = self;
         [wv loadRequest:
@@ -100,7 +117,7 @@
         
         [self.view addSubview: wv];
         wv.scalesPageToFit = YES;
-      
+        
         
         // Round corners using CALayer property
         [[wv layer] setCornerRadius:10];
@@ -114,7 +131,7 @@
         
         [[[DatabaseModel sharedManager] LoadedWebViews] addObject:wv];
         
-    // Create Comment web view
+        // Create Comment web view
         //If this is a comment thread
         if ([[link.URL path] isEqualToString:[link.permalink path]]) {
             //Don't double load thread. Place flag in array instead
@@ -126,37 +143,26 @@
             [wv2 loadRequest:
              [NSURLRequest requestWithURL:
               link.permalink]];
-        
+            
             [self.view addSubview: wv2];
             wv2.scalesPageToFit = YES;
             wv2.hidden = YES;
-        
+            
             // Round corners using CALayer property
             [[wv2 layer] setCornerRadius:10];
             [wv2 setClipsToBounds:YES];
-        
+            
             // Create colored border using CALayer property
             [[wv2 layer] setBorderColor:
-         
+             
              [[UIColor colorWithRed:159.0f/255.0f green:156.0f/255.0f blue:156.0f/255.0f alpha:1.0] CGColor]];
             [[wv2 layer] setBorderWidth:1.75];
-        
+            
             [[[DatabaseModel sharedManager] LoadedComments] addObject:wv2];
         }
     }
     
-    //Display first thread
-    UIWebView *FirstThread;
     
-    //Check if this is a string
-    if ([[[DatabaseModel sharedManager] LoadedComments][0] isKindOfClass:[NSString class]]) {
-    }else{
-        FirstThread = [[DatabaseModel sharedManager] LoadedComments][0];
-        [self AnimateWebView:FirstThread OntoScreen:YES];
-    }
-    FirstThread = [[DatabaseModel sharedManager] LoadedWebViews][0];
-    [self AnimateWebView:FirstThread OntoScreen:YES];
-
 }
 
 - (void)Swap:(UIButton*)sender {
@@ -338,7 +344,26 @@
 }
 
 
-
+- (void)dealloc {
+    /*/Remove delegates of web views
+    UIWebView *wv;
+    for (int i = 0; i< [[[DatabaseModel sharedManager] ActiveThreads] count]; i++) {
+        wv = [[DatabaseModel sharedManager] LoadedWebViews][i];
+        [wv setDelegate:nil];
+        [wv stopLoading];
+        
+        NSLog(@"Web Views Deallocated: %d",i);
+        
+        if ([[[DatabaseModel sharedManager] LoadedComments][i] isKindOfClass:[NSString class]]) {
+        }else{
+        wv = [[DatabaseModel sharedManager] LoadedComments][i];
+        [wv setDelegate:nil];
+        [wv stopLoading];
+            
+            
+        }
+    } */
+}
 
 - (void)didReceiveMemoryWarning
 {
