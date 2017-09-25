@@ -13,11 +13,14 @@
 #import "ThreadsViewController.h"
 @interface RedditUnderGroundViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
+@property (strong, nonatomic) IBOutlet UIButton *btnGoToThreads;
 @property (strong, nonatomic) IBOutlet UIImageView *imgLoad;
 @property (strong, nonatomic) IBOutlet UILabel *lblThreads;
 @property (strong, nonatomic) IBOutlet UISlider *sldThreads;
+@property (strong, nonatomic) IBOutlet UILabel *lblOr;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblStatus;
+@property (strong, nonatomic) IBOutlet UIButton *btnLoadFrontPage;
 @property(strong, nonatomic)NSMutableArray *SubscribedSubreddits;
 @property(strong, nonatomic)NSMutableArray *SelectedSubreddits;
 @property(strong, nonatomic)NSMutableArray *CheckedCells;
@@ -25,6 +28,7 @@
 @property(strong, nonatomic)NSMutableDictionary *LinksDictionary;
 @property (strong, nonatomic) IBOutlet UIButton *btnLoad;
 @property (strong, nonatomic) IBOutlet UITextField *txtUsername;
+@property (strong, nonatomic) IBOutlet UISwitch *swtRefresh;
 
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 

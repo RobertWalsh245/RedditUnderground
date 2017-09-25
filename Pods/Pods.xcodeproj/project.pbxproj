@@ -1,0 +1,1478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0364BC90525C17EF38C7D603A5DBA0DA /* RKClient+Gold.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D8BA26A8A213066267DC21B0387F9 /* RKClient+Gold.m */; };
+		044B1A484BDE91F373275BAEA478330E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FF44178312A86C7B9C1F8431F75735 /* Foundation.framework */; };
+		06E4D055D1EB98304FF13BB9FACA33CB /* NSObject+MTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA37EE3EEC5A54E77E20858A75A121B /* NSObject+MTLComparisonAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		09FB3288840952BEDAB0B2553D85449A /* RKClient+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F42DD582A03EC5FB8466D2EDA76064 /* RKClient+Search.m */; };
+		0A586574E42CB7D8D2D0956E7A1DAD3C /* MTLManagedObjectAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 058ABDFFA733E1A1264C0373A655D02E /* MTLManagedObjectAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E018CCC70DB5CF3D34F3C7A788348E8 /* RKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 75750D778CB81265F31CF29EDEA13D74 /* RKUser.m */; };
+		102B89570B9BFC4C75D1970ECEA85B58 /* Pods-Reddit UnderGround-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4DEC6795DBD577C3E4A257C1D5A767 /* Pods-Reddit UnderGround-dummy.m */; };
+		10CBF2006AD6ADBA932932AD97CFBE3C /* RKComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 956B685AB8E83C9B1EF10A34A1B3C50A /* RKComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15683C33AFF35BC6FBA4AEFF8F537A3A /* Mantle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F3E28C839E4CB61DF424A382E770956 /* Mantle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15FD21BAA6890CC83E04ED1EE67120E3 /* RKPagination.h in Headers */ = {isa = PBXBuildFile; fileRef = 687F827BE5D47D990AC2B3E039068D8A /* RKPagination.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16E11CECD36B654F86848932B7D7A6EE /* MTLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 8449E76E572337D79000BACF7CB4A0C3 /* MTLModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		195A0DFDD234E721B2751ABF111D5B83 /* RKVotable.h in Headers */ = {isa = PBXBuildFile; fileRef = B2AA6132CD755493D9F871D08628028E /* RKVotable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B4FC980963219C3AB484FCBCB348C85 /* RKModeratorAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 149F67D2BC33F7E4D7CBA5C1DA8D964C /* RKModeratorAction.m */; };
+		1B8FE42E72B3F78EE08C41D0E5202172 /* RKClient+Wiki.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F98BA56290F7111FC347D422EAA9BB9 /* RKClient+Wiki.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C3B7A8B204C2761856253F160B208AC /* RKLinkEmbeddedMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = EEEFD9016564DEA1B4D193D7105EA79C /* RKLinkEmbeddedMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CBDB47B210A0C2448C14A610BC6D4D6 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9BBBA274571B3ACAF1A055F087512A /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DDBC745ABBE54827804EB8B6183AF47 /* RKClient+Multireddits.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A12A2688B584263B2CB3056AC7FFFC /* RKClient+Multireddits.m */; };
+		1E310D0CE3BE27EF253B6D822B0AEE5E /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 331EB519E34BC9ADF4C15C3BD3BB0922 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F3981B54AAE154981B930F4CD60B955 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0A15003DCEEBA4FDF7ABE901F172CE /* MobileCoreServices.framework */; };
+		211D4EA06F5920376A069ACB55DF6006 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF89544F7DB0E30E56744E39B005E5E /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23B9BB4FDDACEC7741B0B6F5F3C850C8 /* RKMultiredditDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = B07D72440FDAF2EACE15ECB0F5B69AEA /* RKMultiredditDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25AA4D05212C4733A242CB7A243F6838 /* Pods-Reddit UnderGroundTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D903D57756369F246DD77F6A473DD6 /* Pods-Reddit UnderGroundTests-dummy.m */; };
+		2629EF300E251ECBFF4A6178AB3996BF /* RKCompletionBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D07B9B94B555E5AA1AEA7777F9B223 /* RKCompletionBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28A4F2BC516711FFF1188A6E681780C4 /* NSValueTransformer+MTLInversionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 751063F629D857D1FF176B06E06FE01F /* NSValueTransformer+MTLInversionAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B8269A87473D9F1259E9BD98E7588D3 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A90DE40DB6645D6B4DF0DB69E8EE9020 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CF66E8669A348C421E93F2F67C6A61E /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E217F705EE8E28D7EF58BF6D3D8EBC0 /* AFHTTPSessionManager.m */; };
+		2D7CCF0FDA18A339B423ACC6F2731FC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28310C109F80A2823B80B134627E5D8 /* CoreGraphics.framework */; };
+		2E56EE6C5697EFEF8B78BE05CBCE8FC1 /* MTLEXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F58A11E18BD3CA8ABB33F5185C646BD /* MTLEXTScope.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2F30029EB7645C379405BC50177EB619 /* RKClient+Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07B5B5295599EEA46990DAAA542D8A /* RKClient+Comments.m */; };
+		3033C63AC334D346E9461D0942D8FB69 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7402F81B7A720C9B9707223D892B01 /* AFURLRequestSerialization.m */; };
+		304FD9283967B3619335442D5A1AC020 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9474B3735473B25A84C0D308E2DC33 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		337A0C232BC9C6074B710D58AF235E44 /* MTLEXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 96C62577DEF6EC724DE54CDEE5F94724 /* MTLEXTRuntimeExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3713755FEB7046A527A8FF2723E22EC4 /* RKClient+Comments.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC95FD351E078C31EB702BBF1C4444C /* RKClient+Comments.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38D783B00C960B19CEEEF309C90CF346 /* NSObject+MTLComparisonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E9834518338DD7F6C19D160308039CA /* NSObject+MTLComparisonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38F4C70F2EF81EEEC5D9D1721298FA72 /* RKClient+Flair.h in Headers */ = {isa = PBXBuildFile; fileRef = 75DF0C961EDFD6A59571865BE436307E /* RKClient+Flair.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		399AC825EE10F70364CE7B0AA89F466D /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 7537C6D7BCBE1D2FA2392FBF637B4B5D /* UIAlertView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A5B54373A45916EC8DE74D060DE5503 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EB56BE1FA39272AFAB1CEB2B0C1D94 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C4DE3AEDA3E6A0A67F55B440C7D5004 /* RKLinkEmbeddedMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49C33C878E2E6ADE6E0FF8ADF4F75A /* RKLinkEmbeddedMedia.m */; };
+		3C79BC7D39B86F5960DF2F4C17B81F8F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDC82E26C0F346EB4C7A4C4C5A0E864 /* Security.framework */; };
+		3D7BB77CC5D2DAFCB7D714E82F441BFE /* RKSubreddit.h in Headers */ = {isa = PBXBuildFile; fileRef = 76223CBFB7F2D0BB09CB6F3154CB6E94 /* RKSubreddit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46FD5EF60E9DF8A25383B9692E4D6909 /* RKClient+Miscellaneous.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BF112D90C9E9D5A4B4E4121E236B6B5 /* RKClient+Miscellaneous.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		472A6BFCC6207D98F787649BDF44A1BE /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B47B9A8875BC3F42295B2B218697394 /* AFHTTPRequestOperationManager.m */; };
+		48D8AC640DBD4FD60882D2EDA0B8F598 /* NSArray+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F4C873CB9141DD9E2E7A482425C94C /* NSArray+MTLManipulationAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		495F717651B12E6496C72D16BCC28C29 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = A0645CA98A202B11C8E776C539391098 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C867BDD993344CDC64F5762A45D523E /* RKVotable.m in Sources */ = {isa = PBXBuildFile; fileRef = 718F6F8670D0036005829C97960B2BA2 /* RKVotable.m */; };
+		4D030725666CE0EF86D11A4FCD700DF6 /* RKLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AFD7A8D45BE2685D4227233BB16915 /* RKLink.m */; };
+		51F24A301EA4D90062F3EFF854058BDB /* RKUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C84A054E5FB35D30BAE9661497EB620 /* RKUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5340365AC9F0B783B43DC0AC911AE972 /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DBC92D1FCF174DA0BCBC240A5630A4 /* NSValueTransformer+MTLInversionAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		563D38BDA18CADB13A1E7E59303E7F30 /* MTLEXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6CF65E1D1273F58E707EF44F1A711E /* MTLEXTRuntimeExtensions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5A7BF2141DAA7EA3D4D46C95FB634A9A /* RKMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE13B13035F40935D9CA9DE64DB8AFB /* RKMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CF0E043147B69E77976A2CCADFF18CA /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C11062BD8EB9DE07B4EADDE05C427018 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		621B27F8BB7D49977C552E148278C5A7 /* MTLModel+NSCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = B8315D7E99CCAD5B8F712DC19BAA4DCE /* MTLModel+NSCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B837CB4CA7C6190FDC00F9E227FBD3 /* RKObjectBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = EB003E0F0DF6C8CA48D5F0F07DE625A7 /* RKObjectBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		659F3792E0EFE458ACBAA0A993C51A1B /* NSDictionary+MTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0576747B5897A2A21E86BD6DDE031CB0 /* NSDictionary+MTLManipulationAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4D0CA53998F8E4782E3593F432CFB /* RKClient+Apps.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A3ED74446C7D993C7EFEE1DF55B278 /* RKClient+Apps.m */; };
+		6689084E4F73BEF7D0D80C6697B6D862 /* RKClient+Miscellaneous.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3BDABAE14496C028618BCFC55908B1 /* RKClient+Miscellaneous.m */; };
+		686D25BC3C351BDB9A700B0DE3F7917E /* MTLReflection.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C279D0ACDDDDBA1EBA67942DB2F3C8 /* MTLReflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CC4B79C1FEE1E7B3F2860ADA479D381 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B236C1D1321109DAF88D17D62E25A61 /* AFURLSessionManager.m */; };
+		6E48A842F3821CD5656744F43D80CACE /* MTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB291CB57F9C0B3B0078B2CD4384F9D /* MTLReflection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7033AC8E39531926EE5CF574B69AB25B /* RKThing.h in Headers */ = {isa = PBXBuildFile; fileRef = 59ADDCD9BED5A1C1034F00D797689BE5 /* RKThing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		706AA0AA1460130251060858439F6024 /* RKComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 473E0079646DC0C9151D9543B88F6D51 /* RKComment.m */; };
+		71BFCB364A6D2293700DFA0DB0D67CA5 /* RKClient+Voting.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E6EC9CB737D38152FEFFC708A32609 /* RKClient+Voting.m */; };
+		71F185345D503A86044E868E2426B085 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A81105561E460CA6DD92C93025354D39 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73B5C6D49106A8AC861727FCE967B604 /* RKCreated.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7759B36B7D3A680A47CE2D7B890DF8 /* RKCreated.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74242FF561615BC5099D15FD2260B25F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FF44178312A86C7B9C1F8431F75735 /* Foundation.framework */; };
+		75FF7843560C675D019B599E199A95A5 /* RKClient+Requests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F7599618A50BD49A30B5D6E1A9AB1 /* RKClient+Requests.m */; };
+		7674490726B786EA700F22554BC715AE /* RKResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A29006D74C25CD8D6FD8BD93618F923 /* RKResponseSerializer.m */; };
+		777A878619C988BD288C5D320E8471E3 /* RKClient+Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 23157753CDF0C09E51BB7A282EA52BCC /* RKClient+Users.m */; };
+		78449FCC01114171AA3CCB45C6666206 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B2F8F440F90F88A66FAD149EB757D331 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7856B91F55A8322B373D1E240D46868F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343DFBED3469B92704E04E700E1DFF67 /* SystemConfiguration.framework */; };
+		79879BC329DB1DE36F2DC44A9AC239F1 /* metamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 99307908C18A308E2F1E420672B93BAA /* metamacros.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		7B1BA183C0BAEE9B4391FD21E64D9DD8 /* RKClient+Gold.h in Headers */ = {isa = PBXBuildFile; fileRef = F879F22FCE4A6C27B99EC33DE01B336E /* RKClient+Gold.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CBB3AE3E3BF0CD45EC5E355854A5467 /* RKMultireddit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A533A73303D3113E24C808A08AB8D84 /* RKMultireddit.m */; };
+		80EB5E931D4A272520C463CA14D4D8C1 /* Mantle-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 818C33DF79B93C7F58F44FD255300EA4 /* Mantle-dummy.m */; };
+		854BC4449D8CAD0F2799B021D1914C3B /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FC447BDA8A46ACBEED8C3779534D7B1D /* UIRefreshControl+AFNetworking.m */; };
+		8670FCDD4D492C785A3967B98BEF2DFE /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 44878E69B4E5E8E4326E29F7977EF417 /* NSString+HTML.m */; };
+		86A7A5C16B77879C79F5953784F77A93 /* MTLValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = D117278FB84970E61DC3CF49A5E30155 /* MTLValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		876C2EF5FE318346CDCB4BFE25A9D5B2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D39D6536DEA680BBCF71F16CF8EC7C15 /* AFHTTPRequestOperation.m */; };
+		8D506BC9EFCC014456C843F90817B3E8 /* RKSubreddit.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C5BAF29BABDF0D3F9F47753682F7B4 /* RKSubreddit.m */; };
+		903A0E1F82A29D285902CBB5A0828BE9 /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 820D27AE41C9BED8EED986E81E26BDFD /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9042A1ED95FF0F3A99AE4412C1309AD6 /* MTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABACA4B77F031F619308764B9AF718D1 /* MTLModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		95A0D1B45EAF849FC84DD87B550F01A7 /* RKClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 8507B9A6AEE1416E5EB24ACB05C862C8 /* RKClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		977E7EC3AB1C34EEDB60EB95C52872E7 /* RKClient+Captcha.m in Sources */ = {isa = PBXBuildFile; fileRef = 3040540D4BB249675E419EFCBDF92123 /* RKClient+Captcha.m */; };
+		98ADEB931C4E62FA9E51475C043F7854 /* MTLModel+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF714BE86D6A38E9BC48C7AEF636C03 /* MTLModel+NSCoding.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		998BB22665DF2811D2D6A34293F9ADA7 /* MTLEXTKeyPathCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A94A1B5C20480A7A16255AFCFDAA2A4 /* MTLEXTKeyPathCoding.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		99E82D6DC032555656E37AF2367B20D3 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 799D7FD8FDCA52473F849EDF2EAE6D3B /* UIButton+AFNetworking.m */; };
+		9A04E971065AF4281E43947994A53D07 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B254BC26455FF19734CD11988E58B655 /* UIWebView+AFNetworking.m */; };
+		9B47A1441B897F71505D8BE670B0940B /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F46F8BFF91EA393F48616502BC94FD1F /* UIAlertView+AFNetworking.m */; };
+		9C9DDC196B2CC384E7A8B8B555A36A41 /* RKLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 54895F3E62CB464912E729F85CE690B4 /* RKLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CBDD4AA2D92FF54DF0DA3BF11316A49 /* NSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = 9168659BE57399450876A7AA08611D34 /* NSString+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A022CF247C990036B78072AB1DC54B28 /* RKClient+Links.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E113584B5DB9A28E09DBFBAB0696EAF /* RKClient+Links.m */; };
+		A28588D1CCB5253CF80509F30A1AF1A5 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FA046E9AC08D48C6C504D416A7C9E799 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A29049B1BEBEA9FB1A208EE512F6B755 /* RKClient+Voting.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5FB2E1EE8317882831FBFCBBB25963 /* RKClient+Voting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4EE8D1BEE38B87066BAA1B09A047356 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 335303C729701FCAE1BF81B9A8200590 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9B33C1A84E91F970C9BB7A954613AC3 /* RKPagination.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A1673665EAE8D2E7CD25BDB696B317 /* RKPagination.m */; };
+		AA3AE6C2A227B7A9EB8F6D56CD046B02 /* RKCreated.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C4119C6738B47ED995E0874AFDD7A9 /* RKCreated.m */; };
+		AAAA48D33E762100FDCAE404CF624C5D /* RKClient+Multireddits.h in Headers */ = {isa = PBXBuildFile; fileRef = 16B71AE65410214C5B2674F89B2B16DC /* RKClient+Multireddits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE607E682415FAA160B33C7C13A8475B /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB59D9B0397EE9BFB004C0ECD518DB5 /* UIActivityIndicatorView+AFNetworking.m */; };
+		AED1BB455DBCCADF2FFCAF0DA1E55E35 /* RKClient+Apps.h in Headers */ = {isa = PBXBuildFile; fileRef = 948A5E9FACD5DA11CECA796F5BBFB01C /* RKClient+Apps.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0000E38061DA94E15A7670B3D5A6C0B /* RKClient+Requests.h in Headers */ = {isa = PBXBuildFile; fileRef = C873A77A686B3105F6C97C70256FADDB /* RKClient+Requests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B117DC851FE6B40157E3D66D25A71436 /* RKClient+Moderation.m in Sources */ = {isa = PBXBuildFile; fileRef = D30458760C1AED22479A2FEECF899538 /* RKClient+Moderation.m */; };
+		B12AD2EE044D6F7424F75F1506B516B2 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8935B6B4023E5769699AAF6EAF22802 /* AFSecurityPolicy.m */; };
+		B2536FDF254209AF9E3EC38FEFAE5704 /* RKClient+Errors.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D7F270ADEB75FA8CA2B516504F37D5 /* RKClient+Errors.m */; };
+		B2B5DEC33B644F946C59F656AAAA8146 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED1C892AC6DFACFE733F63D584C6CB4 /* AFNetworkActivityIndicatorManager.m */; };
+		B50326AF0B15C112689A2F2DEBCB22CF /* RKModeratorAction.h in Headers */ = {isa = PBXBuildFile; fileRef = CC994930E176DE45497736EDD335AB27 /* RKModeratorAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6FA182EECDBD9B9A6EED8765D88952F /* RKClient+Links.h in Headers */ = {isa = PBXBuildFile; fileRef = D9EA946CCEF2B2236EACE805757D6DD6 /* RKClient+Links.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7503AB1E8A43CBF69023F92CD237EB1 /* MTLManagedObjectAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2681612EE0074B435B48F0E702C454 /* MTLManagedObjectAdapter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B8720F6DE849A7BE81EA94015C15A0A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FF44178312A86C7B9C1F8431F75735 /* Foundation.framework */; };
+		B888BC1EEA8AC879D4783C58347CAE7B /* RKMultireddit.h in Headers */ = {isa = PBXBuildFile; fileRef = 088AE9586581F98FB08170AEA7DAB007 /* RKMultireddit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FE150C3091E776DE989F2B37317584 /* MTLJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3E209540050099D94EB90F7AEF9B0D /* MTLJSONAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B90E57B1774708D396ABDA724F281550 /* RKMultiredditDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 53734A0374A4B3DC0E4E08482B929B5A /* RKMultiredditDescription.m */; };
+		B9DAA002CF3E0E8EBE9B6E9A7778CFD4 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32961867A923133E3541BF490D4DC4C6 /* AFNetworking-dummy.m */; };
+		BC7993B7436D4D7FADE6DD554DA52769 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 358DE320B527196A2B0BFD1DDFB531B1 /* AFNetworkReachabilityManager.m */; };
+		BE87034DFED484B714ACDE55E24ACAFF /* RKClient+Messages.h in Headers */ = {isa = PBXBuildFile; fileRef = D3B11DE6CA64A8933145AACE8CC56688 /* RKClient+Messages.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C17EE717ED017186CB80DBC2218FBB5D /* MTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7FF95F23E5A7B1C35D19CF5CB3649 /* MTLValueTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C4A78BD4185CD5079A271C8954BEB367 /* RedditKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 99BCF0EFF00E4BF2EF9D9E639703219E /* RedditKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58268D5A4D2A786576E0EAA5B50FB93 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F5D9607FDB854BA7EC412A10D54327 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6482B78C163F63C05ADE2108791A54D /* RKResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = CFEB20C85CCE9A730068E5F5AF6EAF9C /* RKResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7ACDDE36465ACAF629FEC233B1BF172 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C8AF5494C88785C2A74226A201856719 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAA0F8074B35A2F73890310EC4521A0D /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 711145E50E44100C6907EE303B8C5B38 /* AFURLResponseSerialization.m */; };
+		CBE5BD6C5207A0CE5EEE709CEE259CBC /* RKClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0C6BA336E95687CB013B91DD15928 /* RKClient.m */; };
+		CD6838DEB8CB5BCC53119F0448CE449A /* RKClient+Search.h in Headers */ = {isa = PBXBuildFile; fileRef = 730A5A0DA9F39AEE5E2B08CCE2980AE3 /* RKClient+Search.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D070B784EFCA099C141EEAB69FBCC870 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C41FE88E39D1F2D76C27E4B508DC1421 /* UIImageView+AFNetworking.m */; };
+		D11C03176CC6616E693E6463777457B7 /* NSError+MTLModelException.m in Sources */ = {isa = PBXBuildFile; fileRef = CD61805B219CF30534D209151D38CED2 /* NSError+MTLModelException.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D4A65C2E29ACB340587FD41196176F8A /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C383B27A6F8238DDF5B292955153C7A1 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D588B1716F8D6CDE1DB5A70D542408E4 /* MTLEXTScope.h in Headers */ = {isa = PBXBuildFile; fileRef = FA37FF97F4EAF22F8381BB60954319E9 /* MTLEXTScope.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		D6A89F2937025CA2E444BD3E13A5174C /* RKObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A38874C2A9BA9E9BE245C98125ABED /* RKObjectBuilder.m */; };
+		D82C38E9C9233A853B14EEB32FCAF001 /* MTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD09B265D4FFECEF0A12624D04D75E5F /* MTLJSONAdapter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D9725BD1D0790A69A39130F6E8BB2A40 /* NSArray+MTLManipulationAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BFFC5FD1520DBB2CD11AFD416F3820C0 /* NSArray+MTLManipulationAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB2E92A71137AD2E6993E8B0CE682C89 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 303BD804E60833B50893EB4F51E88E4E /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD460264A5CFC345EE1DB5987186FBC2 /* RKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C605301F6B68579384084CAE1790D5 /* RKMessage.m */; };
+		DECD5915774351B8473476B041DD87D7 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4318142A7A2BAE5338F3FB00CE5691C5 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E05A8A863052C99E65BFDF20FA92AFB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FF44178312A86C7B9C1F8431F75735 /* Foundation.framework */; };
+		E143332B1C390B30E2AF6FB69ADD3CDC /* RKClient+Messages.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FFED782B9F8F3E3400D0E450F217F0 /* RKClient+Messages.m */; };
+		E19654B96846675D27A69C54146E8DF9 /* RKClient+Subreddits.h in Headers */ = {isa = PBXBuildFile; fileRef = 442E77CA318148E734E98E1373B06E62 /* RKClient+Subreddits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E251C3A412CD81C29665D0102912146A /* NSError+MTLModelException.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C939B5659BD4D4BA6765C2F150A4E39 /* NSError+MTLModelException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E583C4B41B2C30F296C588941DE310A1 /* RKClient+Flair.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDBF0D5880A305A2A04A762AD79B59C /* RKClient+Flair.m */; };
+		E5A63FD15843F44D197B97FEEFF83B8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FF44178312A86C7B9C1F8431F75735 /* Foundation.framework */; };
+		E624C9FF4B2FAAE2222AFFC69027F296 /* RKClient+Errors.h in Headers */ = {isa = PBXBuildFile; fileRef = 53673376AD647D3D1E4405FB79E80156 /* RKClient+Errors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E62C87170DD98CABC3FCC91A51AFA130 /* RKClient+Moderation.h in Headers */ = {isa = PBXBuildFile; fileRef = DFD949D927F51790A91CEE92EAF99BBD /* RKClient+Moderation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E69801A21EBE8A205C7838B0C00D7744 /* RKClient+Wiki.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4C42C1AF238965DC1C48A72B816227 /* RKClient+Wiki.m */; };
+		E6DD6ABB4FC13B60FA54C950FB6B262B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD6010C974F99DFAE4ADD1259C6A4C4 /* AFURLConnectionOperation.m */; };
+		EDB2DC41D4BA83D1F9B4B0452FA12EEF /* NSDictionary+MTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EB3CAC5D26E5A6529E7194DD1E04FA /* NSDictionary+MTLManipulationAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F163837ADC6EB32127E5BC4206B5C2D8 /* RedditKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C16FC5F984258E9C36AA73022533D88 /* RedditKit-dummy.m */; };
+		F4A1512E8C4D8C8194CBB276BF72A552 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E4FFB19A49E79545EB8CF39FE903C5C /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B03681047157E5C357E584147F5A46 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D36B3011A1F357B34A51BCFD27F3525 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4DCBA2A42A38C6E7A755182DA50DEA2 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 575B5F9AF8FF1864899F37BAD15A06D5 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6C8CB25FEE3747168D68CB7BABF6CE8 /* RKClient+Captcha.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FD481EECA4123DD4DF6C93AC7D22EFF /* RKClient+Captcha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F917CCB8F2415AE2E9DCCCF7B06DFC56 /* RKClient+Subreddits.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B7422240A96AC008DBEFB745785965 /* RKClient+Subreddits.m */; };
+		FB854F904B030DAC841C0B61EF3B434D /* RKClient+Users.h in Headers */ = {isa = PBXBuildFile; fileRef = E61A7B1C587E261AA28029C18DCAA8B6 /* RKClient+Users.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD6F966F458CEE40B07A2367BA3BC8EC /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 629F4A366B82B1C380D2764A13B0ADC3 /* UIProgressView+AFNetworking.m */; };
+		FDC2F0AEEA498AE098DFFBD13B39154B /* RKThing.m in Sources */ = {isa = PBXBuildFile; fileRef = A979532697940802C195E574B4D22ADA /* RKThing.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0494662EB66D5A600F2B61240B41015C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 410B25DF16EA5C5B3E2698F74F9625FB;
+			remoteInfo = AFNetworking;
+		};
+		3719400D2C9F2ABC17CF6E0BDB375211 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 410B25DF16EA5C5B3E2698F74F9625FB;
+			remoteInfo = AFNetworking;
+		};
+		5D85FC61823250A41BABF22D07A769AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5274848432142B064787A7B27709C558;
+			remoteInfo = Mantle;
+		};
+		CDFDDC556D5772757972838F4EEC6C30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6FB3FE8E0B8E3399A870905023B0978;
+			remoteInfo = RedditKit;
+		};
+		E8564F97BFB3E110C9400858054D9C77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5274848432142B064787A7B27709C558;
+			remoteInfo = Mantle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04A3ED74446C7D993C7EFEE1DF55B278 /* RKClient+Apps.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Apps.m"; path = "Classes/Networking/RKClient+Apps.m"; sourceTree = "<group>"; };
+		04DBC92D1FCF174DA0BCBC240A5630A4 /* NSValueTransformer+MTLInversionAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+MTLInversionAdditions.m"; path = "Mantle/NSValueTransformer+MTLInversionAdditions.m"; sourceTree = "<group>"; };
+		0576747B5897A2A21E86BD6DDE031CB0 /* NSDictionary+MTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MTLManipulationAdditions.h"; path = "Mantle/NSDictionary+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		058ABDFFA733E1A1264C0373A655D02E /* MTLManagedObjectAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLManagedObjectAdapter.h; path = Mantle/MTLManagedObjectAdapter.h; sourceTree = "<group>"; };
+		05D07B9B94B555E5AA1AEA7777F9B223 /* RKCompletionBlocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKCompletionBlocks.h; path = Classes/Networking/RKCompletionBlocks.h; sourceTree = "<group>"; };
+		0629A4DFB1C6DF84F9D0352858B59727 /* libMantle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMantle.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		070F7599618A50BD49A30B5D6E1A9AB1 /* RKClient+Requests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Requests.m"; path = "Classes/Networking/RKClient+Requests.m"; sourceTree = "<group>"; };
+		07A1673665EAE8D2E7CD25BDB696B317 /* RKPagination.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKPagination.m; path = Classes/Model/RKPagination.m; sourceTree = "<group>"; };
+		088AE9586581F98FB08170AEA7DAB007 /* RKMultireddit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKMultireddit.h; path = Classes/Model/RKMultireddit.h; sourceTree = "<group>"; };
+		0D0D8BA26A8A213066267DC21B0387F9 /* RKClient+Gold.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Gold.m"; path = "Classes/Networking/RKClient+Gold.m"; sourceTree = "<group>"; };
+		0E4FFB19A49E79545EB8CF39FE903C5C /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		0ED1C892AC6DFACFE733F63D584C6CB4 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		149F67D2BC33F7E4D7CBA5C1DA8D964C /* RKModeratorAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKModeratorAction.m; path = Classes/Model/RKModeratorAction.m; sourceTree = "<group>"; };
+		16B71AE65410214C5B2674F89B2B16DC /* RKClient+Multireddits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Multireddits.h"; path = "Classes/Networking/RKClient+Multireddits.h"; sourceTree = "<group>"; };
+		1B0A15003DCEEBA4FDF7ABE901F172CE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		1DB0C6BA336E95687CB013B91DD15928 /* RKClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKClient.m; path = Classes/Networking/RKClient.m; sourceTree = "<group>"; };
+		1E9474B3735473B25A84C0D308E2DC33 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+MTLPredefinedTransformerAdditions.m"; path = "Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
+		1FE13B13035F40935D9CA9DE64DB8AFB /* RKMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKMessage.h; path = Classes/Model/RKMessage.h; sourceTree = "<group>"; };
+		23157753CDF0C09E51BB7A282EA52BCC /* RKClient+Users.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Users.m"; path = "Classes/Networking/RKClient+Users.m"; sourceTree = "<group>"; };
+		24EB56BE1FA39272AFAB1CEB2B0C1D94 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		2C84A054E5FB35D30BAE9661497EB620 /* RKUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKUser.h; path = Classes/Model/RKUser.h; sourceTree = "<group>"; };
+		2CDBF0D5880A305A2A04A762AD79B59C /* RKClient+Flair.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Flair.m"; path = "Classes/Networking/RKClient+Flair.m"; sourceTree = "<group>"; };
+		2EDC82E26C0F346EB4C7A4C4C5A0E864 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		2F98BA56290F7111FC347D422EAA9BB9 /* RKClient+Wiki.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Wiki.h"; path = "Classes/Networking/RKClient+Wiki.h"; sourceTree = "<group>"; };
+		2FB291CB57F9C0B3B0078B2CD4384F9D /* MTLReflection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLReflection.m; path = Mantle/MTLReflection.m; sourceTree = "<group>"; };
+		2FD481EECA4123DD4DF6C93AC7D22EFF /* RKClient+Captcha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Captcha.h"; path = "Classes/Networking/RKClient+Captcha.h"; sourceTree = "<group>"; };
+		3013ADA5FA5A4E8EC7EAD5D0E94E326D /* Mantle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Mantle.xcconfig; sourceTree = "<group>"; };
+		303BD804E60833B50893EB4F51E88E4E /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		3040540D4BB249675E419EFCBDF92123 /* RKClient+Captcha.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Captcha.m"; path = "Classes/Networking/RKClient+Captcha.m"; sourceTree = "<group>"; };
+		32961867A923133E3541BF490D4DC4C6 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		32A12A2688B584263B2CB3056AC7FFFC /* RKClient+Multireddits.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Multireddits.m"; path = "Classes/Networking/RKClient+Multireddits.m"; sourceTree = "<group>"; };
+		32FFD5146B6DC175A80E545ED939BE53 /* Pods-Reddit UnderGroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reddit UnderGroundTests.debug.xcconfig"; sourceTree = "<group>"; };
+		331EB519E34BC9ADF4C15C3BD3BB0922 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		335303C729701FCAE1BF81B9A8200590 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		343DFBED3469B92704E04E700E1DFF67 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		34C5BAF29BABDF0D3F9F47753682F7B4 /* RKSubreddit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKSubreddit.m; path = Classes/Model/RKSubreddit.m; sourceTree = "<group>"; };
+		355225E403980C4F8E07C6927F82F02D /* Pods-Reddit UnderGround-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reddit UnderGround-acknowledgements.plist"; sourceTree = "<group>"; };
+		358DE320B527196A2B0BFD1DDFB531B1 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		3A533A73303D3113E24C808A08AB8D84 /* RKMultireddit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKMultireddit.m; path = Classes/Model/RKMultireddit.m; sourceTree = "<group>"; };
+		3AC7FF95F23E5A7B1C35D19CF5CB3649 /* MTLValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLValueTransformer.m; path = Mantle/MTLValueTransformer.m; sourceTree = "<group>"; };
+		3B236C1D1321109DAF88D17D62E25A61 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		3DB59D9B0397EE9BFB004C0ECD518DB5 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		3E113584B5DB9A28E09DBFBAB0696EAF /* RKClient+Links.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Links.m"; path = "Classes/Networking/RKClient+Links.m"; sourceTree = "<group>"; };
+		3E217F705EE8E28D7EF58BF6D3D8EBC0 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		3F58A11E18BD3CA8ABB33F5185C646BD /* MTLEXTScope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLEXTScope.m; path = Mantle/extobjc/MTLEXTScope.m; sourceTree = "<group>"; };
+		4318142A7A2BAE5338F3FB00CE5691C5 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		43B10EF8FC60F787E7B7F12E07FA071C /* RedditKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RedditKit-prefix.pch"; sourceTree = "<group>"; };
+		442E77CA318148E734E98E1373B06E62 /* RKClient+Subreddits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Subreddits.h"; path = "Classes/Networking/RKClient+Subreddits.h"; sourceTree = "<group>"; };
+		44878E69B4E5E8E4326E29F7977EF417 /* NSString+HTML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "Classes/Categories/NSString+HTML.m"; sourceTree = "<group>"; };
+		469634B03883A50AC4C5147832D3F715 /* Pods-Reddit UnderGroundTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reddit UnderGroundTests-frameworks.sh"; sourceTree = "<group>"; };
+		473E0079646DC0C9151D9543B88F6D51 /* RKComment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKComment.m; path = Classes/Model/RKComment.m; sourceTree = "<group>"; };
+		4BF112D90C9E9D5A4B4E4121E236B6B5 /* RKClient+Miscellaneous.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Miscellaneous.h"; path = "Classes/Networking/RKClient+Miscellaneous.h"; sourceTree = "<group>"; };
+		52FFED782B9F8F3E3400D0E450F217F0 /* RKClient+Messages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Messages.m"; path = "Classes/Networking/RKClient+Messages.m"; sourceTree = "<group>"; };
+		53673376AD647D3D1E4405FB79E80156 /* RKClient+Errors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Errors.h"; path = "Classes/Networking/RKClient+Errors.h"; sourceTree = "<group>"; };
+		53734A0374A4B3DC0E4E08482B929B5A /* RKMultiredditDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKMultiredditDescription.m; path = Classes/Model/RKMultiredditDescription.m; sourceTree = "<group>"; };
+		54895F3E62CB464912E729F85CE690B4 /* RKLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKLink.h; path = Classes/Model/RKLink.h; sourceTree = "<group>"; };
+		55C4119C6738B47ED995E0874AFDD7A9 /* RKCreated.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKCreated.m; path = Classes/Model/RKCreated.m; sourceTree = "<group>"; };
+		55F4C873CB9141DD9E2E7A482425C94C /* NSArray+MTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MTLManipulationAdditions.m"; path = "Mantle/NSArray+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		575B5F9AF8FF1864899F37BAD15A06D5 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		57D7F270ADEB75FA8CA2B516504F37D5 /* RKClient+Errors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Errors.m"; path = "Classes/Networking/RKClient+Errors.m"; sourceTree = "<group>"; };
+		583D781F9C412DA87C4234184DAC5BE9 /* libRedditKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRedditKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		59ADDCD9BED5A1C1034F00D797689BE5 /* RKThing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKThing.h; path = Classes/Model/RKThing.h; sourceTree = "<group>"; };
+		59AFD7A8D45BE2685D4227233BB16915 /* RKLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKLink.m; path = Classes/Model/RKLink.m; sourceTree = "<group>"; };
+		5A94A1B5C20480A7A16255AFCFDAA2A4 /* MTLEXTKeyPathCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLEXTKeyPathCoding.h; path = Mantle/extobjc/MTLEXTKeyPathCoding.h; sourceTree = "<group>"; };
+		5E7BFF3CBB7C47AD8E17301DE4424324 /* Pods-Reddit UnderGroundTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reddit UnderGroundTests-resources.sh"; sourceTree = "<group>"; };
+		5E9834518338DD7F6C19D160308039CA /* NSObject+MTLComparisonAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MTLComparisonAdditions.h"; path = "Mantle/NSObject+MTLComparisonAdditions.h"; sourceTree = "<group>"; };
+		61E55AB507AF8E9AA27367FF9D09874D /* libPods-Reddit UnderGround.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reddit UnderGround.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		629F4A366B82B1C380D2764A13B0ADC3 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		64B396764EDF08EC047ED35F5D8ABD08 /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
+		678699893317932636C8B568034EE36B /* Pods-Reddit UnderGround-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reddit UnderGround-acknowledgements.markdown"; sourceTree = "<group>"; };
+		687F827BE5D47D990AC2B3E039068D8A /* RKPagination.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKPagination.h; path = Classes/Model/RKPagination.h; sourceTree = "<group>"; };
+		6A29006D74C25CD8D6FD8BD93618F923 /* RKResponseSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKResponseSerializer.m; path = Classes/Networking/RKResponseSerializer.m; sourceTree = "<group>"; };
+		6CF714BE86D6A38E9BC48C7AEF636C03 /* MTLModel+NSCoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MTLModel+NSCoding.m"; path = "Mantle/MTLModel+NSCoding.m"; sourceTree = "<group>"; };
+		6D36B3011A1F357B34A51BCFD27F3525 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		6DA37EE3EEC5A54E77E20858A75A121B /* NSObject+MTLComparisonAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MTLComparisonAdditions.m"; path = "Mantle/NSObject+MTLComparisonAdditions.m"; sourceTree = "<group>"; };
+		6DFDD64104ED11FFF833543F503F893A /* Pods-Reddit UnderGround-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reddit UnderGround-resources.sh"; sourceTree = "<group>"; };
+		6ED110C002671E9060B007F15237D519 /* Pods-Reddit UnderGround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reddit UnderGround.debug.xcconfig"; sourceTree = "<group>"; };
+		711145E50E44100C6907EE303B8C5B38 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		718F6F8670D0036005829C97960B2BA2 /* RKVotable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKVotable.m; path = Classes/Model/RKVotable.m; sourceTree = "<group>"; };
+		724B907EB7E7ACB9C78E073A7174A66B /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		730A5A0DA9F39AEE5E2B08CCE2980AE3 /* RKClient+Search.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Search.h"; path = "Classes/Networking/RKClient+Search.h"; sourceTree = "<group>"; };
+		751063F629D857D1FF176B06E06FE01F /* NSValueTransformer+MTLInversionAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+MTLInversionAdditions.h"; path = "Mantle/NSValueTransformer+MTLInversionAdditions.h"; sourceTree = "<group>"; };
+		7537C6D7BCBE1D2FA2392FBF637B4B5D /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		75750D778CB81265F31CF29EDEA13D74 /* RKUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKUser.m; path = Classes/Model/RKUser.m; sourceTree = "<group>"; };
+		75DF0C961EDFD6A59571865BE436307E /* RKClient+Flair.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Flair.h"; path = "Classes/Networking/RKClient+Flair.h"; sourceTree = "<group>"; };
+		76223CBFB7F2D0BB09CB6F3154CB6E94 /* RKSubreddit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKSubreddit.h; path = Classes/Model/RKSubreddit.h; sourceTree = "<group>"; };
+		78F5D9607FDB854BA7EC412A10D54327 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		799D7FD8FDCA52473F849EDF2EAE6D3B /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		7B47B9A8875BC3F42295B2B218697394 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		7B7402F81B7A720C9B9707223D892B01 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		7F3E28C839E4CB61DF424A382E770956 /* Mantle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mantle.h; path = Mantle/Mantle.h; sourceTree = "<group>"; };
+		80E6EC9CB737D38152FEFFC708A32609 /* RKClient+Voting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Voting.m"; path = "Classes/Networking/RKClient+Voting.m"; sourceTree = "<group>"; };
+		80FF44178312A86C7B9C1F8431F75735 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		818C33DF79B93C7F58F44FD255300EA4 /* Mantle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mantle-dummy.m"; sourceTree = "<group>"; };
+		820D27AE41C9BED8EED986E81E26BDFD /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		827618B34E2DB8245663584135FCDD85 /* Pods-Reddit UnderGround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reddit UnderGround.release.xcconfig"; sourceTree = "<group>"; };
+		8449E76E572337D79000BACF7CB4A0C3 /* MTLModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLModel.h; path = Mantle/MTLModel.h; sourceTree = "<group>"; };
+		8507B9A6AEE1416E5EB24ACB05C862C8 /* RKClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKClient.h; path = Classes/Networking/RKClient.h; sourceTree = "<group>"; };
+		85A38874C2A9BA9E9BE245C98125ABED /* RKObjectBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKObjectBuilder.m; path = Classes/Networking/RKObjectBuilder.m; sourceTree = "<group>"; };
+		8B07B5B5295599EEA46990DAAA542D8A /* RKClient+Comments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Comments.m"; path = "Classes/Networking/RKClient+Comments.m"; sourceTree = "<group>"; };
+		9168659BE57399450876A7AA08611D34 /* NSString+HTML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "Classes/Categories/NSString+HTML.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		948A5E9FACD5DA11CECA796F5BBFB01C /* RKClient+Apps.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Apps.h"; path = "Classes/Networking/RKClient+Apps.h"; sourceTree = "<group>"; };
+		94B7422240A96AC008DBEFB745785965 /* RKClient+Subreddits.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Subreddits.m"; path = "Classes/Networking/RKClient+Subreddits.m"; sourceTree = "<group>"; };
+		956B685AB8E83C9B1EF10A34A1B3C50A /* RKComment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKComment.h; path = Classes/Model/RKComment.h; sourceTree = "<group>"; };
+		96C62577DEF6EC724DE54CDEE5F94724 /* MTLEXTRuntimeExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLEXTRuntimeExtensions.h; path = Mantle/extobjc/MTLEXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		98D903D57756369F246DD77F6A473DD6 /* Pods-Reddit UnderGroundTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reddit UnderGroundTests-dummy.m"; sourceTree = "<group>"; };
+		99307908C18A308E2F1E420672B93BAA /* metamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = Mantle/extobjc/metamacros.h; sourceTree = "<group>"; };
+		99BCF0EFF00E4BF2EF9D9E639703219E /* RedditKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedditKit.h; path = Classes/RedditKit.h; sourceTree = "<group>"; };
+		9C16FC5F984258E9C36AA73022533D88 /* RedditKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RedditKit-dummy.m"; sourceTree = "<group>"; };
+		9C939B5659BD4D4BA6765C2F150A4E39 /* NSError+MTLModelException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+MTLModelException.h"; path = "Mantle/NSError+MTLModelException.h"; sourceTree = "<group>"; };
+		9D9BBBA274571B3ACAF1A055F087512A /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		A0645CA98A202B11C8E776C539391098 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		A3C605301F6B68579384084CAE1790D5 /* RKMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKMessage.m; path = Classes/Model/RKMessage.m; sourceTree = "<group>"; };
+		A81105561E460CA6DD92C93025354D39 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+MTLPredefinedTransformerAdditions.h"; path = "Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
+		A90DE40DB6645D6B4DF0DB69E8EE9020 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		A979532697940802C195E574B4D22ADA /* RKThing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKThing.m; path = Classes/Model/RKThing.m; sourceTree = "<group>"; };
+		AB4C42C1AF238965DC1C48A72B816227 /* RKClient+Wiki.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Wiki.m"; path = "Classes/Networking/RKClient+Wiki.m"; sourceTree = "<group>"; };
+		ABACA4B77F031F619308764B9AF718D1 /* MTLModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLModel.m; path = Mantle/MTLModel.m; sourceTree = "<group>"; };
+		ABD6010C974F99DFAE4ADD1259C6A4C4 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		AC6CF65E1D1273F58E707EF44F1A711E /* MTLEXTRuntimeExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLEXTRuntimeExtensions.m; path = Mantle/extobjc/MTLEXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		AD3BDABAE14496C028618BCFC55908B1 /* RKClient+Miscellaneous.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Miscellaneous.m"; path = "Classes/Networking/RKClient+Miscellaneous.m"; sourceTree = "<group>"; };
+		B07D72440FDAF2EACE15ECB0F5B69AEA /* RKMultiredditDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKMultiredditDescription.h; path = Classes/Model/RKMultiredditDescription.h; sourceTree = "<group>"; };
+		B254BC26455FF19734CD11988E58B655 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		B2AA6132CD755493D9F871D08628028E /* RKVotable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKVotable.h; path = Classes/Model/RKVotable.h; sourceTree = "<group>"; };
+		B2F8F440F90F88A66FAD149EB757D331 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		B3130490F83D84553EF943962790E372 /* Pods-Reddit UnderGround-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Reddit UnderGround-frameworks.sh"; sourceTree = "<group>"; };
+		B8315D7E99CCAD5B8F712DC19BAA4DCE /* MTLModel+NSCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MTLModel+NSCoding.h"; path = "Mantle/MTLModel+NSCoding.h"; sourceTree = "<group>"; };
+		B8935B6B4023E5769699AAF6EAF22802 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		B9EB3CAC5D26E5A6529E7194DD1E04FA /* NSDictionary+MTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MTLManipulationAdditions.m"; path = "Mantle/NSDictionary+MTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		BFFC5FD1520DBB2CD11AFD416F3820C0 /* NSArray+MTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MTLManipulationAdditions.h"; path = "Mantle/NSArray+MTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		C11062BD8EB9DE07B4EADDE05C427018 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		C2C279D0ACDDDDBA1EBA67942DB2F3C8 /* MTLReflection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLReflection.h; path = Mantle/MTLReflection.h; sourceTree = "<group>"; };
+		C383B27A6F8238DDF5B292955153C7A1 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		C41FE88E39D1F2D76C27E4B508DC1421 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		C4634982531C001B971CF5796F49D911 /* libPods-Reddit UnderGroundTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reddit UnderGroundTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C873A77A686B3105F6C97C70256FADDB /* RKClient+Requests.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Requests.h"; path = "Classes/Networking/RKClient+Requests.h"; sourceTree = "<group>"; };
+		C8AF5494C88785C2A74226A201856719 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		CAC95FD351E078C31EB702BBF1C4444C /* RKClient+Comments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Comments.h"; path = "Classes/Networking/RKClient+Comments.h"; sourceTree = "<group>"; };
+		CC994930E176DE45497736EDD335AB27 /* RKModeratorAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKModeratorAction.h; path = Classes/Model/RKModeratorAction.h; sourceTree = "<group>"; };
+		CD4489F532570717B0E1E20BC895AA4B /* RedditKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RedditKit.xcconfig; sourceTree = "<group>"; };
+		CD61805B219CF30534D209151D38CED2 /* NSError+MTLModelException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+MTLModelException.m"; path = "Mantle/NSError+MTLModelException.m"; sourceTree = "<group>"; };
+		CE7759B36B7D3A680A47CE2D7B890DF8 /* RKCreated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKCreated.h; path = Classes/Model/RKCreated.h; sourceTree = "<group>"; };
+		CF4DEC6795DBD577C3E4A257C1D5A767 /* Pods-Reddit UnderGround-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reddit UnderGround-dummy.m"; sourceTree = "<group>"; };
+		CFEB20C85CCE9A730068E5F5AF6EAF9C /* RKResponseSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKResponseSerializer.h; path = Classes/Networking/RKResponseSerializer.h; sourceTree = "<group>"; };
+		D117278FB84970E61DC3CF49A5E30155 /* MTLValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLValueTransformer.h; path = Mantle/MTLValueTransformer.h; sourceTree = "<group>"; };
+		D1F42DD582A03EC5FB8466D2EDA76064 /* RKClient+Search.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Search.m"; path = "Classes/Networking/RKClient+Search.m"; sourceTree = "<group>"; };
+		D30458760C1AED22479A2FEECF899538 /* RKClient+Moderation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RKClient+Moderation.m"; path = "Classes/Networking/RKClient+Moderation.m"; sourceTree = "<group>"; };
+		D39D6536DEA680BBCF71F16CF8EC7C15 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		D3B11DE6CA64A8933145AACE8CC56688 /* RKClient+Messages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Messages.h"; path = "Classes/Networking/RKClient+Messages.h"; sourceTree = "<group>"; };
+		D432DBC24538B50483B105879A9BB6EE /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7E2445F2C4716717F1815B7A2982CD6 /* Pods-Reddit UnderGroundTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Reddit UnderGroundTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D9EA946CCEF2B2236EACE805757D6DD6 /* RKClient+Links.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Links.h"; path = "Classes/Networking/RKClient+Links.h"; sourceTree = "<group>"; };
+		DC3E209540050099D94EB90F7AEF9B0D /* MTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLJSONAdapter.h; path = Mantle/MTLJSONAdapter.h; sourceTree = "<group>"; };
+		DFD949D927F51790A91CEE92EAF99BBD /* RKClient+Moderation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Moderation.h"; path = "Classes/Networking/RKClient+Moderation.h"; sourceTree = "<group>"; };
+		E471033C6B009CE2A86FE997EFE4FA2B /* Pods-Reddit UnderGroundTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Reddit UnderGroundTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E61A7B1C587E261AA28029C18DCAA8B6 /* RKClient+Users.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Users.h"; path = "Classes/Networking/RKClient+Users.h"; sourceTree = "<group>"; };
+		EA49C33C878E2E6ADE6E0FF8ADF4F75A /* RKLinkEmbeddedMedia.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RKLinkEmbeddedMedia.m; path = Classes/Model/RKLinkEmbeddedMedia.m; sourceTree = "<group>"; };
+		EA6D338F3F70FF54CD4335D603D50EAB /* Mantle-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mantle-prefix.pch"; sourceTree = "<group>"; };
+		EB003E0F0DF6C8CA48D5F0F07DE625A7 /* RKObjectBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKObjectBuilder.h; path = Classes/Networking/RKObjectBuilder.h; sourceTree = "<group>"; };
+		EEEFD9016564DEA1B4D193D7105EA79C /* RKLinkEmbeddedMedia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RKLinkEmbeddedMedia.h; path = Classes/Model/RKLinkEmbeddedMedia.h; sourceTree = "<group>"; };
+		EF2681612EE0074B435B48F0E702C454 /* MTLManagedObjectAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLManagedObjectAdapter.m; path = Mantle/MTLManagedObjectAdapter.m; sourceTree = "<group>"; };
+		EFF89544F7DB0E30E56744E39B005E5E /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		F2342091F4E3173A01B8CB0BA06C5919 /* Pods-Reddit UnderGroundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reddit UnderGroundTests.release.xcconfig"; sourceTree = "<group>"; };
+		F28310C109F80A2823B80B134627E5D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		F46F8BFF91EA393F48616502BC94FD1F /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		F879F22FCE4A6C27B99EC33DE01B336E /* RKClient+Gold.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Gold.h"; path = "Classes/Networking/RKClient+Gold.h"; sourceTree = "<group>"; };
+		FA046E9AC08D48C6C504D416A7C9E799 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		FA37FF97F4EAF22F8381BB60954319E9 /* MTLEXTScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLEXTScope.h; path = Mantle/extobjc/MTLEXTScope.h; sourceTree = "<group>"; };
+		FA5FB2E1EE8317882831FBFCBBB25963 /* RKClient+Voting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RKClient+Voting.h"; path = "Classes/Networking/RKClient+Voting.h"; sourceTree = "<group>"; };
+		FC447BDA8A46ACBEED8C3779534D7B1D /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		FD09B265D4FFECEF0A12624D04D75E5F /* MTLJSONAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLJSONAdapter.m; path = Mantle/MTLJSONAdapter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1941A8D4AA05E84E0199DB3893FB94C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8720F6DE849A7BE81EA94015C15A0A5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DDA66756EB2A6A382AEF549AA7F02E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74242FF561615BC5099D15FD2260B25F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E129FB3420A50FECEF6B14EA9B2C1F83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044B1A484BDE91F373275BAEA478330E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3DB8D280A0B34C072A6A701BEF8B67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05A8A863052C99E65BFDF20FA92AFB1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F428C0A5C7AEF469CC7F9B7E6EC0003A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D7CCF0FDA18A339B423ACC6F2731FC8 /* CoreGraphics.framework in Frameworks */,
+				E5A63FD15843F44D197B97FEEFF83B8F /* Foundation.framework in Frameworks */,
+				1F3981B54AAE154981B930F4CD60B955 /* MobileCoreServices.framework in Frameworks */,
+				3C79BC7D39B86F5960DF2F4C17B81F8F /* Security.framework in Frameworks */,
+				7856B91F55A8322B373D1E240D46868F /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3193CAF693F496CF6BBAA7E0BCD76004 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26F2630D69B77082B8A1867C02DEFBD8 /* RedditKit */ = {
+			isa = PBXGroup;
+			children = (
+				9168659BE57399450876A7AA08611D34 /* NSString+HTML.h */,
+				44878E69B4E5E8E4326E29F7977EF417 /* NSString+HTML.m */,
+				99BCF0EFF00E4BF2EF9D9E639703219E /* RedditKit.h */,
+				8507B9A6AEE1416E5EB24ACB05C862C8 /* RKClient.h */,
+				1DB0C6BA336E95687CB013B91DD15928 /* RKClient.m */,
+				948A5E9FACD5DA11CECA796F5BBFB01C /* RKClient+Apps.h */,
+				04A3ED74446C7D993C7EFEE1DF55B278 /* RKClient+Apps.m */,
+				2FD481EECA4123DD4DF6C93AC7D22EFF /* RKClient+Captcha.h */,
+				3040540D4BB249675E419EFCBDF92123 /* RKClient+Captcha.m */,
+				CAC95FD351E078C31EB702BBF1C4444C /* RKClient+Comments.h */,
+				8B07B5B5295599EEA46990DAAA542D8A /* RKClient+Comments.m */,
+				53673376AD647D3D1E4405FB79E80156 /* RKClient+Errors.h */,
+				57D7F270ADEB75FA8CA2B516504F37D5 /* RKClient+Errors.m */,
+				75DF0C961EDFD6A59571865BE436307E /* RKClient+Flair.h */,
+				2CDBF0D5880A305A2A04A762AD79B59C /* RKClient+Flair.m */,
+				F879F22FCE4A6C27B99EC33DE01B336E /* RKClient+Gold.h */,
+				0D0D8BA26A8A213066267DC21B0387F9 /* RKClient+Gold.m */,
+				D9EA946CCEF2B2236EACE805757D6DD6 /* RKClient+Links.h */,
+				3E113584B5DB9A28E09DBFBAB0696EAF /* RKClient+Links.m */,
+				D3B11DE6CA64A8933145AACE8CC56688 /* RKClient+Messages.h */,
+				52FFED782B9F8F3E3400D0E450F217F0 /* RKClient+Messages.m */,
+				4BF112D90C9E9D5A4B4E4121E236B6B5 /* RKClient+Miscellaneous.h */,
+				AD3BDABAE14496C028618BCFC55908B1 /* RKClient+Miscellaneous.m */,
+				DFD949D927F51790A91CEE92EAF99BBD /* RKClient+Moderation.h */,
+				D30458760C1AED22479A2FEECF899538 /* RKClient+Moderation.m */,
+				16B71AE65410214C5B2674F89B2B16DC /* RKClient+Multireddits.h */,
+				32A12A2688B584263B2CB3056AC7FFFC /* RKClient+Multireddits.m */,
+				C873A77A686B3105F6C97C70256FADDB /* RKClient+Requests.h */,
+				070F7599618A50BD49A30B5D6E1A9AB1 /* RKClient+Requests.m */,
+				730A5A0DA9F39AEE5E2B08CCE2980AE3 /* RKClient+Search.h */,
+				D1F42DD582A03EC5FB8466D2EDA76064 /* RKClient+Search.m */,
+				442E77CA318148E734E98E1373B06E62 /* RKClient+Subreddits.h */,
+				94B7422240A96AC008DBEFB745785965 /* RKClient+Subreddits.m */,
+				E61A7B1C587E261AA28029C18DCAA8B6 /* RKClient+Users.h */,
+				23157753CDF0C09E51BB7A282EA52BCC /* RKClient+Users.m */,
+				FA5FB2E1EE8317882831FBFCBBB25963 /* RKClient+Voting.h */,
+				80E6EC9CB737D38152FEFFC708A32609 /* RKClient+Voting.m */,
+				2F98BA56290F7111FC347D422EAA9BB9 /* RKClient+Wiki.h */,
+				AB4C42C1AF238965DC1C48A72B816227 /* RKClient+Wiki.m */,
+				956B685AB8E83C9B1EF10A34A1B3C50A /* RKComment.h */,
+				473E0079646DC0C9151D9543B88F6D51 /* RKComment.m */,
+				05D07B9B94B555E5AA1AEA7777F9B223 /* RKCompletionBlocks.h */,
+				CE7759B36B7D3A680A47CE2D7B890DF8 /* RKCreated.h */,
+				55C4119C6738B47ED995E0874AFDD7A9 /* RKCreated.m */,
+				54895F3E62CB464912E729F85CE690B4 /* RKLink.h */,
+				59AFD7A8D45BE2685D4227233BB16915 /* RKLink.m */,
+				EEEFD9016564DEA1B4D193D7105EA79C /* RKLinkEmbeddedMedia.h */,
+				EA49C33C878E2E6ADE6E0FF8ADF4F75A /* RKLinkEmbeddedMedia.m */,
+				1FE13B13035F40935D9CA9DE64DB8AFB /* RKMessage.h */,
+				A3C605301F6B68579384084CAE1790D5 /* RKMessage.m */,
+				CC994930E176DE45497736EDD335AB27 /* RKModeratorAction.h */,
+				149F67D2BC33F7E4D7CBA5C1DA8D964C /* RKModeratorAction.m */,
+				088AE9586581F98FB08170AEA7DAB007 /* RKMultireddit.h */,
+				3A533A73303D3113E24C808A08AB8D84 /* RKMultireddit.m */,
+				B07D72440FDAF2EACE15ECB0F5B69AEA /* RKMultiredditDescription.h */,
+				53734A0374A4B3DC0E4E08482B929B5A /* RKMultiredditDescription.m */,
+				EB003E0F0DF6C8CA48D5F0F07DE625A7 /* RKObjectBuilder.h */,
+				85A38874C2A9BA9E9BE245C98125ABED /* RKObjectBuilder.m */,
+				687F827BE5D47D990AC2B3E039068D8A /* RKPagination.h */,
+				07A1673665EAE8D2E7CD25BDB696B317 /* RKPagination.m */,
+				CFEB20C85CCE9A730068E5F5AF6EAF9C /* RKResponseSerializer.h */,
+				6A29006D74C25CD8D6FD8BD93618F923 /* RKResponseSerializer.m */,
+				76223CBFB7F2D0BB09CB6F3154CB6E94 /* RKSubreddit.h */,
+				34C5BAF29BABDF0D3F9F47753682F7B4 /* RKSubreddit.m */,
+				59ADDCD9BED5A1C1034F00D797689BE5 /* RKThing.h */,
+				A979532697940802C195E574B4D22ADA /* RKThing.m */,
+				2C84A054E5FB35D30BAE9661497EB620 /* RKUser.h */,
+				75750D778CB81265F31CF29EDEA13D74 /* RKUser.m */,
+				B2AA6132CD755493D9F871D08628028E /* RKVotable.h */,
+				718F6F8670D0036005829C97960B2BA2 /* RKVotable.m */,
+				9390BABCCED2044748440047F139F54D /* Support Files */,
+			);
+			path = RedditKit;
+			sourceTree = "<group>";
+		};
+		297E5D4A614C58EB34EE17B89C59A012 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				A0645CA98A202B11C8E776C539391098 /* AFURLRequestSerialization.h */,
+				7B7402F81B7A720C9B9707223D892B01 /* AFURLRequestSerialization.m */,
+				331EB519E34BC9ADF4C15C3BD3BB0922 /* AFURLResponseSerialization.h */,
+				711145E50E44100C6907EE303B8C5B38 /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		3193CAF693F496CF6BBAA7E0BCD76004 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F28310C109F80A2823B80B134627E5D8 /* CoreGraphics.framework */,
+				80FF44178312A86C7B9C1F8431F75735 /* Foundation.framework */,
+				1B0A15003DCEEBA4FDF7ABE901F172CE /* MobileCoreServices.framework */,
+				2EDC82E26C0F346EB4C7A4C4C5A0E864 /* Security.framework */,
+				343DFBED3469B92704E04E700E1DFF67 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		35A5653F271DFE5E7DE379C6BF63B0AA /* extobjc */ = {
+			isa = PBXGroup;
+			children = (
+				99307908C18A308E2F1E420672B93BAA /* metamacros.h */,
+				5A94A1B5C20480A7A16255AFCFDAA2A4 /* MTLEXTKeyPathCoding.h */,
+				96C62577DEF6EC724DE54CDEE5F94724 /* MTLEXTRuntimeExtensions.h */,
+				AC6CF65E1D1273F58E707EF44F1A711E /* MTLEXTRuntimeExtensions.m */,
+				FA37FF97F4EAF22F8381BB60954319E9 /* MTLEXTScope.h */,
+				3F58A11E18BD3CA8ABB33F5185C646BD /* MTLEXTScope.m */,
+			);
+			name = extobjc;
+			sourceTree = "<group>";
+		};
+		35CCBF4E33FAAABE039C1BB410692E87 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				64B396764EDF08EC047ED35F5D8ABD08 /* AFNetworking.xcconfig */,
+				32961867A923133E3541BF490D4DC4C6 /* AFNetworking-dummy.m */,
+				724B907EB7E7ACB9C78E073A7174A66B /* AFNetworking-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AFNetworking";
+			sourceTree = "<group>";
+		};
+		4B22DAA178A21053ACE5F131F6035442 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEEB01F5AC01E64D5CCA30CD56598C5B /* AFNetworking */,
+				65D900C7D74FDA74F6778DDE56DD0411 /* Mantle */,
+				26F2630D69B77082B8A1867C02DEFBD8 /* RedditKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		65D900C7D74FDA74F6778DDE56DD0411 /* Mantle */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E28C839E4CB61DF424A382E770956 /* Mantle.h */,
+				DC3E209540050099D94EB90F7AEF9B0D /* MTLJSONAdapter.h */,
+				FD09B265D4FFECEF0A12624D04D75E5F /* MTLJSONAdapter.m */,
+				058ABDFFA733E1A1264C0373A655D02E /* MTLManagedObjectAdapter.h */,
+				EF2681612EE0074B435B48F0E702C454 /* MTLManagedObjectAdapter.m */,
+				8449E76E572337D79000BACF7CB4A0C3 /* MTLModel.h */,
+				ABACA4B77F031F619308764B9AF718D1 /* MTLModel.m */,
+				B8315D7E99CCAD5B8F712DC19BAA4DCE /* MTLModel+NSCoding.h */,
+				6CF714BE86D6A38E9BC48C7AEF636C03 /* MTLModel+NSCoding.m */,
+				C2C279D0ACDDDDBA1EBA67942DB2F3C8 /* MTLReflection.h */,
+				2FB291CB57F9C0B3B0078B2CD4384F9D /* MTLReflection.m */,
+				D117278FB84970E61DC3CF49A5E30155 /* MTLValueTransformer.h */,
+				3AC7FF95F23E5A7B1C35D19CF5CB3649 /* MTLValueTransformer.m */,
+				BFFC5FD1520DBB2CD11AFD416F3820C0 /* NSArray+MTLManipulationAdditions.h */,
+				55F4C873CB9141DD9E2E7A482425C94C /* NSArray+MTLManipulationAdditions.m */,
+				0576747B5897A2A21E86BD6DDE031CB0 /* NSDictionary+MTLManipulationAdditions.h */,
+				B9EB3CAC5D26E5A6529E7194DD1E04FA /* NSDictionary+MTLManipulationAdditions.m */,
+				9C939B5659BD4D4BA6765C2F150A4E39 /* NSError+MTLModelException.h */,
+				CD61805B219CF30534D209151D38CED2 /* NSError+MTLModelException.m */,
+				5E9834518338DD7F6C19D160308039CA /* NSObject+MTLComparisonAdditions.h */,
+				6DA37EE3EEC5A54E77E20858A75A121B /* NSObject+MTLComparisonAdditions.m */,
+				751063F629D857D1FF176B06E06FE01F /* NSValueTransformer+MTLInversionAdditions.h */,
+				04DBC92D1FCF174DA0BCBC240A5630A4 /* NSValueTransformer+MTLInversionAdditions.m */,
+				A81105561E460CA6DD92C93025354D39 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */,
+				1E9474B3735473B25A84C0D308E2DC33 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */,
+				35A5653F271DFE5E7DE379C6BF63B0AA /* extobjc */,
+				99CE7B8C5F8B6F8A9BBF3EA79A797A51 /* Support Files */,
+			);
+			path = Mantle;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				4B22DAA178A21053ACE5F131F6035442 /* Pods */,
+				D618C48FFA1694AAC74915312B892460 /* Products */,
+				C6335098EB75656605EEA116BF0E833D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9390BABCCED2044748440047F139F54D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD4489F532570717B0E1E20BC895AA4B /* RedditKit.xcconfig */,
+				9C16FC5F984258E9C36AA73022533D88 /* RedditKit-dummy.m */,
+				43B10EF8FC60F787E7B7F12E07FA071C /* RedditKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RedditKit";
+			sourceTree = "<group>";
+		};
+		99CE7B8C5F8B6F8A9BBF3EA79A797A51 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3013ADA5FA5A4E8EC7EAD5D0E94E326D /* Mantle.xcconfig */,
+				818C33DF79B93C7F58F44FD255300EA4 /* Mantle-dummy.m */,
+				EA6D338F3F70FF54CD4335D603D50EAB /* Mantle-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Mantle";
+			sourceTree = "<group>";
+		};
+		9CD9A7701F416D400C01AB427AB4600E /* NSURLConnection */ = {
+			isa = PBXGroup;
+			children = (
+				EFF89544F7DB0E30E56744E39B005E5E /* AFHTTPRequestOperation.h */,
+				D39D6536DEA680BBCF71F16CF8EC7C15 /* AFHTTPRequestOperation.m */,
+				0E4FFB19A49E79545EB8CF39FE903C5C /* AFHTTPRequestOperationManager.h */,
+				7B47B9A8875BC3F42295B2B218697394 /* AFHTTPRequestOperationManager.m */,
+				303BD804E60833B50893EB4F51E88E4E /* AFURLConnectionOperation.h */,
+				ABD6010C974F99DFAE4ADD1259C6A4C4 /* AFURLConnectionOperation.m */,
+			);
+			name = NSURLConnection;
+			sourceTree = "<group>";
+		};
+		B56AA3621389D37F27F6D5F3E12459D2 /* Pods-Reddit UnderGroundTests */ = {
+			isa = PBXGroup;
+			children = (
+				E471033C6B009CE2A86FE997EFE4FA2B /* Pods-Reddit UnderGroundTests-acknowledgements.markdown */,
+				D7E2445F2C4716717F1815B7A2982CD6 /* Pods-Reddit UnderGroundTests-acknowledgements.plist */,
+				98D903D57756369F246DD77F6A473DD6 /* Pods-Reddit UnderGroundTests-dummy.m */,
+				469634B03883A50AC4C5147832D3F715 /* Pods-Reddit UnderGroundTests-frameworks.sh */,
+				5E7BFF3CBB7C47AD8E17301DE4424324 /* Pods-Reddit UnderGroundTests-resources.sh */,
+				32FFD5146B6DC175A80E545ED939BE53 /* Pods-Reddit UnderGroundTests.debug.xcconfig */,
+				F2342091F4E3173A01B8CB0BA06C5919 /* Pods-Reddit UnderGroundTests.release.xcconfig */,
+			);
+			name = "Pods-Reddit UnderGroundTests";
+			path = "Target Support Files/Pods-Reddit UnderGroundTests";
+			sourceTree = "<group>";
+		};
+		BA85EF4E6F4C86C74782467DC2671992 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B2F8F440F90F88A66FAD149EB757D331 /* AFNetworkReachabilityManager.h */,
+				358DE320B527196A2B0BFD1DDFB531B1 /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		C3526C800BA858B358BD3063AFF7DC4F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				575B5F9AF8FF1864899F37BAD15A06D5 /* AFNetworkActivityIndicatorManager.h */,
+				0ED1C892AC6DFACFE733F63D584C6CB4 /* AFNetworkActivityIndicatorManager.m */,
+				FA046E9AC08D48C6C504D416A7C9E799 /* UIActivityIndicatorView+AFNetworking.h */,
+				3DB59D9B0397EE9BFB004C0ECD518DB5 /* UIActivityIndicatorView+AFNetworking.m */,
+				7537C6D7BCBE1D2FA2392FBF637B4B5D /* UIAlertView+AFNetworking.h */,
+				F46F8BFF91EA393F48616502BC94FD1F /* UIAlertView+AFNetworking.m */,
+				24EB56BE1FA39272AFAB1CEB2B0C1D94 /* UIButton+AFNetworking.h */,
+				799D7FD8FDCA52473F849EDF2EAE6D3B /* UIButton+AFNetworking.m */,
+				820D27AE41C9BED8EED986E81E26BDFD /* UIImage+AFNetworking.h */,
+				C383B27A6F8238DDF5B292955153C7A1 /* UIImageView+AFNetworking.h */,
+				C41FE88E39D1F2D76C27E4B508DC1421 /* UIImageView+AFNetworking.m */,
+				6D36B3011A1F357B34A51BCFD27F3525 /* UIKit+AFNetworking.h */,
+				C8AF5494C88785C2A74226A201856719 /* UIProgressView+AFNetworking.h */,
+				629F4A366B82B1C380D2764A13B0ADC3 /* UIProgressView+AFNetworking.m */,
+				78F5D9607FDB854BA7EC412A10D54327 /* UIRefreshControl+AFNetworking.h */,
+				FC447BDA8A46ACBEED8C3779534D7B1D /* UIRefreshControl+AFNetworking.m */,
+				335303C729701FCAE1BF81B9A8200590 /* UIWebView+AFNetworking.h */,
+				B254BC26455FF19734CD11988E58B655 /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		C6335098EB75656605EEA116BF0E833D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6C765B74DFDEB5A96B24D1CE2EDFB02 /* Pods-Reddit UnderGround */,
+				B56AA3621389D37F27F6D5F3E12459D2 /* Pods-Reddit UnderGroundTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C9102E611F75EF2F5ED26E6582C0C75C /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				4318142A7A2BAE5338F3FB00CE5691C5 /* AFHTTPSessionManager.h */,
+				3E217F705EE8E28D7EF58BF6D3D8EBC0 /* AFHTTPSessionManager.m */,
+				C11062BD8EB9DE07B4EADDE05C427018 /* AFURLSessionManager.h */,
+				3B236C1D1321109DAF88D17D62E25A61 /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		D618C48FFA1694AAC74915312B892460 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D432DBC24538B50483B105879A9BB6EE /* libAFNetworking.a */,
+				0629A4DFB1C6DF84F9D0352858B59727 /* libMantle.a */,
+				61E55AB507AF8E9AA27367FF9D09874D /* libPods-Reddit UnderGround.a */,
+				C4634982531C001B971CF5796F49D911 /* libPods-Reddit UnderGroundTests.a */,
+				583D781F9C412DA87C4234184DAC5BE9 /* libRedditKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEEB01F5AC01E64D5CCA30CD56598C5B /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				A90DE40DB6645D6B4DF0DB69E8EE9020 /* AFNetworking.h */,
+				9CD9A7701F416D400C01AB427AB4600E /* NSURLConnection */,
+				C9102E611F75EF2F5ED26E6582C0C75C /* NSURLSession */,
+				BA85EF4E6F4C86C74782467DC2671992 /* Reachability */,
+				FBAE52CA4AFA58E8AD8F7B02B2623F83 /* Security */,
+				297E5D4A614C58EB34EE17B89C59A012 /* Serialization */,
+				35CCBF4E33FAAABE039C1BB410692E87 /* Support Files */,
+				C3526C800BA858B358BD3063AFF7DC4F /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		E6C765B74DFDEB5A96B24D1CE2EDFB02 /* Pods-Reddit UnderGround */ = {
+			isa = PBXGroup;
+			children = (
+				678699893317932636C8B568034EE36B /* Pods-Reddit UnderGround-acknowledgements.markdown */,
+				355225E403980C4F8E07C6927F82F02D /* Pods-Reddit UnderGround-acknowledgements.plist */,
+				CF4DEC6795DBD577C3E4A257C1D5A767 /* Pods-Reddit UnderGround-dummy.m */,
+				B3130490F83D84553EF943962790E372 /* Pods-Reddit UnderGround-frameworks.sh */,
+				6DFDD64104ED11FFF833543F503F893A /* Pods-Reddit UnderGround-resources.sh */,
+				6ED110C002671E9060B007F15237D519 /* Pods-Reddit UnderGround.debug.xcconfig */,
+				827618B34E2DB8245663584135FCDD85 /* Pods-Reddit UnderGround.release.xcconfig */,
+			);
+			name = "Pods-Reddit UnderGround";
+			path = "Target Support Files/Pods-Reddit UnderGround";
+			sourceTree = "<group>";
+		};
+		FBAE52CA4AFA58E8AD8F7B02B2623F83 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				9D9BBBA274571B3ACAF1A055F087512A /* AFSecurityPolicy.h */,
+				B8935B6B4023E5769699AAF6EAF22802 /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0EBAFFAC033582794278EC5DF8357260 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15683C33AFF35BC6FBA4AEFF8F537A3A /* Mantle.h in Headers */,
+				79879BC329DB1DE36F2DC44A9AC239F1 /* metamacros.h in Headers */,
+				998BB22665DF2811D2D6A34293F9ADA7 /* MTLEXTKeyPathCoding.h in Headers */,
+				337A0C232BC9C6074B710D58AF235E44 /* MTLEXTRuntimeExtensions.h in Headers */,
+				D588B1716F8D6CDE1DB5A70D542408E4 /* MTLEXTScope.h in Headers */,
+				B8FE150C3091E776DE989F2B37317584 /* MTLJSONAdapter.h in Headers */,
+				0A586574E42CB7D8D2D0956E7A1DAD3C /* MTLManagedObjectAdapter.h in Headers */,
+				621B27F8BB7D49977C552E148278C5A7 /* MTLModel+NSCoding.h in Headers */,
+				16E11CECD36B654F86848932B7D7A6EE /* MTLModel.h in Headers */,
+				686D25BC3C351BDB9A700B0DE3F7917E /* MTLReflection.h in Headers */,
+				86A7A5C16B77879C79F5953784F77A93 /* MTLValueTransformer.h in Headers */,
+				D9725BD1D0790A69A39130F6E8BB2A40 /* NSArray+MTLManipulationAdditions.h in Headers */,
+				659F3792E0EFE458ACBAA0A993C51A1B /* NSDictionary+MTLManipulationAdditions.h in Headers */,
+				E251C3A412CD81C29665D0102912146A /* NSError+MTLModelException.h in Headers */,
+				38D783B00C960B19CEEEF309C90CF346 /* NSObject+MTLComparisonAdditions.h in Headers */,
+				28A4F2BC516711FFF1188A6E681780C4 /* NSValueTransformer+MTLInversionAdditions.h in Headers */,
+				71F185345D503A86044E868E2426B085 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAEA40CAA8E05521254765C0FE8DABE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CBDD4AA2D92FF54DF0DA3BF11316A49 /* NSString+HTML.h in Headers */,
+				C4A78BD4185CD5079A271C8954BEB367 /* RedditKit.h in Headers */,
+				AED1BB455DBCCADF2FFCAF0DA1E55E35 /* RKClient+Apps.h in Headers */,
+				F6C8CB25FEE3747168D68CB7BABF6CE8 /* RKClient+Captcha.h in Headers */,
+				3713755FEB7046A527A8FF2723E22EC4 /* RKClient+Comments.h in Headers */,
+				E624C9FF4B2FAAE2222AFFC69027F296 /* RKClient+Errors.h in Headers */,
+				38F4C70F2EF81EEEC5D9D1721298FA72 /* RKClient+Flair.h in Headers */,
+				7B1BA183C0BAEE9B4391FD21E64D9DD8 /* RKClient+Gold.h in Headers */,
+				B6FA182EECDBD9B9A6EED8765D88952F /* RKClient+Links.h in Headers */,
+				BE87034DFED484B714ACDE55E24ACAFF /* RKClient+Messages.h in Headers */,
+				46FD5EF60E9DF8A25383B9692E4D6909 /* RKClient+Miscellaneous.h in Headers */,
+				E62C87170DD98CABC3FCC91A51AFA130 /* RKClient+Moderation.h in Headers */,
+				AAAA48D33E762100FDCAE404CF624C5D /* RKClient+Multireddits.h in Headers */,
+				B0000E38061DA94E15A7670B3D5A6C0B /* RKClient+Requests.h in Headers */,
+				CD6838DEB8CB5BCC53119F0448CE449A /* RKClient+Search.h in Headers */,
+				E19654B96846675D27A69C54146E8DF9 /* RKClient+Subreddits.h in Headers */,
+				FB854F904B030DAC841C0B61EF3B434D /* RKClient+Users.h in Headers */,
+				A29049B1BEBEA9FB1A208EE512F6B755 /* RKClient+Voting.h in Headers */,
+				1B8FE42E72B3F78EE08C41D0E5202172 /* RKClient+Wiki.h in Headers */,
+				95A0D1B45EAF849FC84DD87B550F01A7 /* RKClient.h in Headers */,
+				10CBF2006AD6ADBA932932AD97CFBE3C /* RKComment.h in Headers */,
+				2629EF300E251ECBFF4A6178AB3996BF /* RKCompletionBlocks.h in Headers */,
+				73B5C6D49106A8AC861727FCE967B604 /* RKCreated.h in Headers */,
+				9C9DDC196B2CC384E7A8B8B555A36A41 /* RKLink.h in Headers */,
+				1C3B7A8B204C2761856253F160B208AC /* RKLinkEmbeddedMedia.h in Headers */,
+				5A7BF2141DAA7EA3D4D46C95FB634A9A /* RKMessage.h in Headers */,
+				B50326AF0B15C112689A2F2DEBCB22CF /* RKModeratorAction.h in Headers */,
+				B888BC1EEA8AC879D4783C58347CAE7B /* RKMultireddit.h in Headers */,
+				23B9BB4FDDACEC7741B0B6F5F3C850C8 /* RKMultiredditDescription.h in Headers */,
+				63B837CB4CA7C6190FDC00F9E227FBD3 /* RKObjectBuilder.h in Headers */,
+				15FD21BAA6890CC83E04ED1EE67120E3 /* RKPagination.h in Headers */,
+				C6482B78C163F63C05ADE2108791A54D /* RKResponseSerializer.h in Headers */,
+				3D7BB77CC5D2DAFCB7D714E82F441BFE /* RKSubreddit.h in Headers */,
+				7033AC8E39531926EE5CF574B69AB25B /* RKThing.h in Headers */,
+				51F24A301EA4D90062F3EFF854058BDB /* RKUser.h in Headers */,
+				195A0DFDD234E721B2751ABF111D5B83 /* RKVotable.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C26A9D9761804867532D147CEA1D5A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				211D4EA06F5920376A069ACB55DF6006 /* AFHTTPRequestOperation.h in Headers */,
+				F4A1512E8C4D8C8194CBB276BF72A552 /* AFHTTPRequestOperationManager.h in Headers */,
+				DECD5915774351B8473476B041DD87D7 /* AFHTTPSessionManager.h in Headers */,
+				F4DCBA2A42A38C6E7A755182DA50DEA2 /* AFNetworkActivityIndicatorManager.h in Headers */,
+				2B8269A87473D9F1259E9BD98E7588D3 /* AFNetworking.h in Headers */,
+				78449FCC01114171AA3CCB45C6666206 /* AFNetworkReachabilityManager.h in Headers */,
+				1CBDB47B210A0C2448C14A610BC6D4D6 /* AFSecurityPolicy.h in Headers */,
+				DB2E92A71137AD2E6993E8B0CE682C89 /* AFURLConnectionOperation.h in Headers */,
+				495F717651B12E6496C72D16BCC28C29 /* AFURLRequestSerialization.h in Headers */,
+				1E310D0CE3BE27EF253B6D822B0AEE5E /* AFURLResponseSerialization.h in Headers */,
+				5CF0E043147B69E77976A2CCADFF18CA /* AFURLSessionManager.h in Headers */,
+				A28588D1CCB5253CF80509F30A1AF1A5 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				399AC825EE10F70364CE7B0AA89F466D /* UIAlertView+AFNetworking.h in Headers */,
+				3A5B54373A45916EC8DE74D060DE5503 /* UIButton+AFNetworking.h in Headers */,
+				903A0E1F82A29D285902CBB5A0828BE9 /* UIImage+AFNetworking.h in Headers */,
+				D4A65C2E29ACB340587FD41196176F8A /* UIImageView+AFNetworking.h in Headers */,
+				F4B03681047157E5C357E584147F5A46 /* UIKit+AFNetworking.h in Headers */,
+				C7ACDDE36465ACAF629FEC233B1BF172 /* UIProgressView+AFNetworking.h in Headers */,
+				C58268D5A4D2A786576E0EAA5B50FB93 /* UIRefreshControl+AFNetworking.h in Headers */,
+				A4EE8D1BEE38B87066BAA1B09A047356 /* UIWebView+AFNetworking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		146421559C7F8E9E57D0A6E431BCD1DE /* Pods-Reddit UnderGroundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 693617A424517E7AC86EF49E47F53451 /* Build configuration list for PBXNativeTarget "Pods-Reddit UnderGroundTests" */;
+			buildPhases = (
+				E792981F6B6B5579272BBB8091C992BD /* Sources */,
+				1941A8D4AA05E84E0199DB3893FB94C6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Reddit UnderGroundTests";
+			productName = "Pods-Reddit UnderGroundTests";
+			productReference = C4634982531C001B971CF5796F49D911 /* libPods-Reddit UnderGroundTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		410B25DF16EA5C5B3E2698F74F9625FB /* AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41F6B64BF089D072A394601910D14E7B /* Build configuration list for PBXNativeTarget "AFNetworking" */;
+			buildPhases = (
+				9D44B0AD2D97CB2AA74B614C1E92EDCF /* Sources */,
+				F428C0A5C7AEF469CC7F9B7E6EC0003A /* Frameworks */,
+				E9C26A9D9761804867532D147CEA1D5A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AFNetworking;
+			productName = AFNetworking;
+			productReference = D432DBC24538B50483B105879A9BB6EE /* libAFNetworking.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5274848432142B064787A7B27709C558 /* Mantle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B8141C08B8C8375BFE3D96BBD304B86 /* Build configuration list for PBXNativeTarget "Mantle" */;
+			buildPhases = (
+				7DACE31B7086DF692D05F662FE05B540 /* Sources */,
+				9DDA66756EB2A6A382AEF549AA7F02E7 /* Frameworks */,
+				0EBAFFAC033582794278EC5DF8357260 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mantle;
+			productName = Mantle;
+			productReference = 0629A4DFB1C6DF84F9D0352858B59727 /* libMantle.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C6FB3FE8E0B8E3399A870905023B0978 /* RedditKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8E661F795CD1F0D063A32A75F8CF119 /* Build configuration list for PBXNativeTarget "RedditKit" */;
+			buildPhases = (
+				126EFA0AAF2CBA785561605309800D0F /* Sources */,
+				EF3DB8D280A0B34C072A6A701BEF8B67 /* Frameworks */,
+				AAEA40CAA8E05521254765C0FE8DABE9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7BF400F8BEEBD9DA8E1B6A86E035F69 /* PBXTargetDependency */,
+				E61749DF3C9ED3200B4A4360CF47FFA1 /* PBXTargetDependency */,
+			);
+			name = RedditKit;
+			productName = RedditKit;
+			productReference = 583D781F9C412DA87C4234184DAC5BE9 /* libRedditKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D78F20DDAD9CB79C59934317208D068C /* Pods-Reddit UnderGround */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FF3D9BC65020092C4D4C13BF0A76882 /* Build configuration list for PBXNativeTarget "Pods-Reddit UnderGround" */;
+			buildPhases = (
+				8EA6DF7977C15E430CAE276828E7D896 /* Sources */,
+				E129FB3420A50FECEF6B14EA9B2C1F83 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB06758839E9B4B58DF28759EAD8523F /* PBXTargetDependency */,
+				F6B48B4B36C0E3288CFD6772059F6AE7 /* PBXTargetDependency */,
+				F1E945EB06BFECC577E5BECBC2859064 /* PBXTargetDependency */,
+			);
+			name = "Pods-Reddit UnderGround";
+			productName = "Pods-Reddit UnderGround";
+			productReference = 61E55AB507AF8E9AA27367FF9D09874D /* libPods-Reddit UnderGround.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = D618C48FFA1694AAC74915312B892460 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				410B25DF16EA5C5B3E2698F74F9625FB /* AFNetworking */,
+				5274848432142B064787A7B27709C558 /* Mantle */,
+				D78F20DDAD9CB79C59934317208D068C /* Pods-Reddit UnderGround */,
+				146421559C7F8E9E57D0A6E431BCD1DE /* Pods-Reddit UnderGroundTests */,
+				C6FB3FE8E0B8E3399A870905023B0978 /* RedditKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		126EFA0AAF2CBA785561605309800D0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8670FCDD4D492C785A3967B98BEF2DFE /* NSString+HTML.m in Sources */,
+				F163837ADC6EB32127E5BC4206B5C2D8 /* RedditKit-dummy.m in Sources */,
+				65E4D0CA53998F8E4782E3593F432CFB /* RKClient+Apps.m in Sources */,
+				977E7EC3AB1C34EEDB60EB95C52872E7 /* RKClient+Captcha.m in Sources */,
+				2F30029EB7645C379405BC50177EB619 /* RKClient+Comments.m in Sources */,
+				B2536FDF254209AF9E3EC38FEFAE5704 /* RKClient+Errors.m in Sources */,
+				E583C4B41B2C30F296C588941DE310A1 /* RKClient+Flair.m in Sources */,
+				0364BC90525C17EF38C7D603A5DBA0DA /* RKClient+Gold.m in Sources */,
+				A022CF247C990036B78072AB1DC54B28 /* RKClient+Links.m in Sources */,
+				E143332B1C390B30E2AF6FB69ADD3CDC /* RKClient+Messages.m in Sources */,
+				6689084E4F73BEF7D0D80C6697B6D862 /* RKClient+Miscellaneous.m in Sources */,
+				B117DC851FE6B40157E3D66D25A71436 /* RKClient+Moderation.m in Sources */,
+				1DDBC745ABBE54827804EB8B6183AF47 /* RKClient+Multireddits.m in Sources */,
+				75FF7843560C675D019B599E199A95A5 /* RKClient+Requests.m in Sources */,
+				09FB3288840952BEDAB0B2553D85449A /* RKClient+Search.m in Sources */,
+				F917CCB8F2415AE2E9DCCCF7B06DFC56 /* RKClient+Subreddits.m in Sources */,
+				777A878619C988BD288C5D320E8471E3 /* RKClient+Users.m in Sources */,
+				71BFCB364A6D2293700DFA0DB0D67CA5 /* RKClient+Voting.m in Sources */,
+				E69801A21EBE8A205C7838B0C00D7744 /* RKClient+Wiki.m in Sources */,
+				CBE5BD6C5207A0CE5EEE709CEE259CBC /* RKClient.m in Sources */,
+				706AA0AA1460130251060858439F6024 /* RKComment.m in Sources */,
+				AA3AE6C2A227B7A9EB8F6D56CD046B02 /* RKCreated.m in Sources */,
+				4D030725666CE0EF86D11A4FCD700DF6 /* RKLink.m in Sources */,
+				3C4DE3AEDA3E6A0A67F55B440C7D5004 /* RKLinkEmbeddedMedia.m in Sources */,
+				DD460264A5CFC345EE1DB5987186FBC2 /* RKMessage.m in Sources */,
+				1B4FC980963219C3AB484FCBCB348C85 /* RKModeratorAction.m in Sources */,
+				7CBB3AE3E3BF0CD45EC5E355854A5467 /* RKMultireddit.m in Sources */,
+				B90E57B1774708D396ABDA724F281550 /* RKMultiredditDescription.m in Sources */,
+				D6A89F2937025CA2E444BD3E13A5174C /* RKObjectBuilder.m in Sources */,
+				A9B33C1A84E91F970C9BB7A954613AC3 /* RKPagination.m in Sources */,
+				7674490726B786EA700F22554BC715AE /* RKResponseSerializer.m in Sources */,
+				8D506BC9EFCC014456C843F90817B3E8 /* RKSubreddit.m in Sources */,
+				FDC2F0AEEA498AE098DFFBD13B39154B /* RKThing.m in Sources */,
+				0E018CCC70DB5CF3D34F3C7A788348E8 /* RKUser.m in Sources */,
+				4C867BDD993344CDC64F5762A45D523E /* RKVotable.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DACE31B7086DF692D05F662FE05B540 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80EB5E931D4A272520C463CA14D4D8C1 /* Mantle-dummy.m in Sources */,
+				563D38BDA18CADB13A1E7E59303E7F30 /* MTLEXTRuntimeExtensions.m in Sources */,
+				2E56EE6C5697EFEF8B78BE05CBCE8FC1 /* MTLEXTScope.m in Sources */,
+				D82C38E9C9233A853B14EEB32FCAF001 /* MTLJSONAdapter.m in Sources */,
+				B7503AB1E8A43CBF69023F92CD237EB1 /* MTLManagedObjectAdapter.m in Sources */,
+				98ADEB931C4E62FA9E51475C043F7854 /* MTLModel+NSCoding.m in Sources */,
+				9042A1ED95FF0F3A99AE4412C1309AD6 /* MTLModel.m in Sources */,
+				6E48A842F3821CD5656744F43D80CACE /* MTLReflection.m in Sources */,
+				C17EE717ED017186CB80DBC2218FBB5D /* MTLValueTransformer.m in Sources */,
+				48D8AC640DBD4FD60882D2EDA0B8F598 /* NSArray+MTLManipulationAdditions.m in Sources */,
+				EDB2DC41D4BA83D1F9B4B0452FA12EEF /* NSDictionary+MTLManipulationAdditions.m in Sources */,
+				D11C03176CC6616E693E6463777457B7 /* NSError+MTLModelException.m in Sources */,
+				06E4D055D1EB98304FF13BB9FACA33CB /* NSObject+MTLComparisonAdditions.m in Sources */,
+				5340365AC9F0B783B43DC0AC911AE972 /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
+				304FD9283967B3619335442D5A1AC020 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EA6DF7977C15E430CAE276828E7D896 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				102B89570B9BFC4C75D1970ECEA85B58 /* Pods-Reddit UnderGround-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D44B0AD2D97CB2AA74B614C1E92EDCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				876C2EF5FE318346CDCB4BFE25A9D5B2 /* AFHTTPRequestOperation.m in Sources */,
+				472A6BFCC6207D98F787649BDF44A1BE /* AFHTTPRequestOperationManager.m in Sources */,
+				2CF66E8669A348C421E93F2F67C6A61E /* AFHTTPSessionManager.m in Sources */,
+				B2B5DEC33B644F946C59F656AAAA8146 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				B9DAA002CF3E0E8EBE9B6E9A7778CFD4 /* AFNetworking-dummy.m in Sources */,
+				BC7993B7436D4D7FADE6DD554DA52769 /* AFNetworkReachabilityManager.m in Sources */,
+				B12AD2EE044D6F7424F75F1506B516B2 /* AFSecurityPolicy.m in Sources */,
+				E6DD6ABB4FC13B60FA54C950FB6B262B /* AFURLConnectionOperation.m in Sources */,
+				3033C63AC334D346E9461D0942D8FB69 /* AFURLRequestSerialization.m in Sources */,
+				CAA0F8074B35A2F73890310EC4521A0D /* AFURLResponseSerialization.m in Sources */,
+				6CC4B79C1FEE1E7B3F2860ADA479D381 /* AFURLSessionManager.m in Sources */,
+				AE607E682415FAA160B33C7C13A8475B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				9B47A1441B897F71505D8BE670B0940B /* UIAlertView+AFNetworking.m in Sources */,
+				99E82D6DC032555656E37AF2367B20D3 /* UIButton+AFNetworking.m in Sources */,
+				D070B784EFCA099C141EEAB69FBCC870 /* UIImageView+AFNetworking.m in Sources */,
+				FD6F966F458CEE40B07A2367BA3BC8EC /* UIProgressView+AFNetworking.m in Sources */,
+				854BC4449D8CAD0F2799B021D1914C3B /* UIRefreshControl+AFNetworking.m in Sources */,
+				9A04E971065AF4281E43947994A53D07 /* UIWebView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E792981F6B6B5579272BBB8091C992BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25AA4D05212C4733A242CB7A243F6838 /* Pods-Reddit UnderGroundTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7BF400F8BEEBD9DA8E1B6A86E035F69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = 410B25DF16EA5C5B3E2698F74F9625FB /* AFNetworking */;
+			targetProxy = 3719400D2C9F2ABC17CF6E0BDB375211 /* PBXContainerItemProxy */;
+		};
+		E61749DF3C9ED3200B4A4360CF47FFA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Mantle;
+			target = 5274848432142B064787A7B27709C558 /* Mantle */;
+			targetProxy = E8564F97BFB3E110C9400858054D9C77 /* PBXContainerItemProxy */;
+		};
+		F1E945EB06BFECC577E5BECBC2859064 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RedditKit;
+			target = C6FB3FE8E0B8E3399A870905023B0978 /* RedditKit */;
+			targetProxy = CDFDDC556D5772757972838F4EEC6C30 /* PBXContainerItemProxy */;
+		};
+		F6B48B4B36C0E3288CFD6772059F6AE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Mantle;
+			target = 5274848432142B064787A7B27709C558 /* Mantle */;
+			targetProxy = 5D85FC61823250A41BABF22D07A769AE /* PBXContainerItemProxy */;
+		};
+		FB06758839E9B4B58DF28759EAD8523F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = 410B25DF16EA5C5B3E2698F74F9625FB /* AFNetworking */;
+			targetProxy = 0494662EB66D5A600F2B61240B41015C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		061CD45031632EE46925366B91A08595 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ED110C002671E9060B007F15237D519 /* Pods-Reddit UnderGround.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0F5D259C4FC2F4115768C24F12B03BBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2342091F4E3173A01B8CB0BA06C5919 /* Pods-Reddit UnderGroundTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		44B039A715ED6A3B2960E2E56E5192F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3013ADA5FA5A4E8EC7EAD5D0E94E326D /* Mantle.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Mantle/Mantle-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		53B24DC53567B863A4EC939BA8C91EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		56CA9FA2A5BD157912913A38EE85307E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD4489F532570717B0E1E20BC895AA4B /* RedditKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RedditKit/RedditKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		58AC5C52B433FBACFD38A60DE6262F17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64B396764EDF08EC047ED35F5D8ABD08 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6659BDBF66193F83904E9BAE21063F95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32FFD5146B6DC175A80E545ED939BE53 /* Pods-Reddit UnderGroundTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6E8650B586063F4B0A6C383981C0C203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95BE592AB6AD547E4C8796519584856A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD4489F532570717B0E1E20BC895AA4B /* RedditKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RedditKit/RedditKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AFFAC74BD8E56E303DC924B595AD894C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3013ADA5FA5A4E8EC7EAD5D0E94E326D /* Mantle.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Mantle/Mantle-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BC0403DEA183A05BC7D2D6995B00658B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 827618B34E2DB8245663584135FCDD85 /* Pods-Reddit UnderGround.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F192D4530660B2A322F1F9E33D055F5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64B396764EDF08EC047ED35F5D8ABD08 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B24DC53567B863A4EC939BA8C91EFC /* Debug */,
+				6E8650B586063F4B0A6C383981C0C203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FF3D9BC65020092C4D4C13BF0A76882 /* Build configuration list for PBXNativeTarget "Pods-Reddit UnderGround" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				061CD45031632EE46925366B91A08595 /* Debug */,
+				BC0403DEA183A05BC7D2D6995B00658B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41F6B64BF089D072A394601910D14E7B /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58AC5C52B433FBACFD38A60DE6262F17 /* Debug */,
+				F192D4530660B2A322F1F9E33D055F5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		693617A424517E7AC86EF49E47F53451 /* Build configuration list for PBXNativeTarget "Pods-Reddit UnderGroundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6659BDBF66193F83904E9BAE21063F95 /* Debug */,
+				0F5D259C4FC2F4115768C24F12B03BBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B8141C08B8C8375BFE3D96BBD304B86 /* Build configuration list for PBXNativeTarget "Mantle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44B039A715ED6A3B2960E2E56E5192F4 /* Debug */,
+				AFFAC74BD8E56E303DC924B595AD894C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8E661F795CD1F0D063A32A75F8CF119 /* Build configuration list for PBXNativeTarget "RedditKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95BE592AB6AD547E4C8796519584856A /* Debug */,
+				56CA9FA2A5BD157912913A38EE85307E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

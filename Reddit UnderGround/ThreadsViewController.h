@@ -11,5 +11,8 @@
 #import "RedditKit.h"
 @interface ThreadsViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITableView *tblThreads;
+@property (strong, nonatomic) IBOutlet UIButton *btnHeader;
 
+-(void) SetUpWebViews;
+-(void)AnimateFirstWebview;
 @end

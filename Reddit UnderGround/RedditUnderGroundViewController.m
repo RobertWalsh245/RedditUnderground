@@ -9,15 +9,31 @@
 #import "RedditUnderGroundViewController.h"
 #import "DatabaseModel.h"
 #import "ThreadsViewController.h"
+#import <CoreFoundation/CoreFoundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <netdb.h>
 
 @interface RedditUnderGroundViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *tblReddits;
 
+//HTML color codes of logo
+//Red Ring = #CF0013 ....... R:207 G:0 B:19
+//Blue #2D2D6E.........R:45 G:45 B:110
+//Reddit eye #ED1C00
+
+//Logo Orig aspect ratio 446 width 390 height
+
+@property (nonatomic, strong) NSDecimalNumber *previous;
+@property (nonatomic, strong) NSDecimalNumber *current;
+@property (nonatomic) NSUInteger position;
+@property (nonatomic, strong) NSTimer *updateTimer;
+@property (nonatomic) UIBackgroundTaskIdentifier backgroundTask;
 
 @end
 
 @implementation RedditUnderGroundViewController
+@synthesize btnGoToThreads;
 @synthesize lblTitle;
 @synthesize btnLoad;
 @synthesize imgLoad;
@@ -25,7 +41,9 @@
 bool NeedSubreddits;
 int Searching;
 int Returned;
-
+@synthesize swtRefresh;
+@synthesize lblOr;
+@synthesize btnLoadFrontPage;
 @synthesize lblThreads;
 @synthesize SettingsView;
 @synthesize txtUsername;
@@ -102,13 +120,27 @@ int Returned;
     //self.navigationController.navigationBar.hidden = YES;
     
     [UIView commitAnimations];
-
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.backgroundTask = UIBackgroundTaskInvalid;
+    
+    self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:20
+                                                        target:self
+                                                      selector:@selector(RefreshThreads)
+                                                      userInfo:nil
+                                                       repeats:YES];
+    
+    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        NSLog(@"Background handler called. Not running background tasks anymore.");
+        [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
+        self.backgroundTask = UIBackgroundTaskInvalid;
+    }];
+    
     
   // self.tabBarController.tabBar.hidden = YES;
     
@@ -123,15 +155,32 @@ int Returned;
     [self.SettingsView setClipsToBounds:YES];
     
     // Create colored border using CALayer property
+    
+    //self.SettingsView.layer.borderColor = [UIColor colorWithRed:255 green:45 blue:110 alpha:1.0].CGColor;
+    
+    
+    // Create colored border using CALayer property
     [[self.SettingsView layer] setBorderColor:
      
-     [[UIColor colorWithRed:159.0f/255.0f green:156.0f/255.0f blue:156.0f/255.0f alpha:1.0] CGColor]];
-    [[self.SettingsView layer] setBorderWidth:1.75];
+     [[UIColor colorWithRed:45.0f/255.0f green:45.0f/255.0f blue:110.0f/255.0f alpha:1.0] CGColor]];
+    [[self.SettingsView layer] setBorderWidth:5];
     
+    //[[self.SettingsView layer] setBorderColor:
+     //HTML color codes of logo
+     //Red Ring = #CF0013 ....... R:207 G:0 B:19
+     //Blue #2D2D6E.........R:45 G:45 B:110
+   //  [[UIColor colorWithRed:45 green:45 blue:110 alpha:1.0] CGColor]];
+    
+    
+    //[[self.SettingsView layer] setBackgroundColor:
+     //HTML color codes of logo
+     //Red Ring = #CF0013 ....... R:207 G:0 B:19
+     //Blue #2D2D6E.........R:45 G:45 B:110
+     //[[UIColor colorWithRed:0 green:0 blue:0 alpha:1.0] CGColor]];
     
      [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.navigationController.navigationBar.hidden = YES;
-    [self.navigationController.navigationBar setBarTintColor:[UIColor scrollViewTexturedBackgroundColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTranslucent:YES];
     
     [[UINavigationBar appearance] setTintColor:[UIColor scrollViewTexturedBackgroundColor]];
@@ -144,12 +193,20 @@ int Returned;
     
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     
+    
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon-Small@2x.png"]];
+    
+    
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
     barButton.title = @"";
     
     self.navigationItem.backBarButtonItem = barButton;
     
-    lblTitle.font = [UIFont fontWithName:@"rocko-flf" size:22];
+    lblTitle.font = [UIFont fontWithName:@"rocko-flf" size:28];
+    lblOr.font = [UIFont fontWithName:@"rocko-flf" size:16];
+    btnLoad.font = [UIFont fontWithName:@"rocko-flf" size:16];
+    btnLoadFrontPage.font = [UIFont fontWithName:@"rocko-flf" size:16];
+    btnGoToThreads.font = [UIFont fontWithName:@"rocko-flf" size:16];
     
     RKSubreddit *subreddit;
     
@@ -183,6 +240,12 @@ int Returned;
      name:@"retrievedlinks"
      object:nil ];
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(FrontPageRetrievedWasNotified:)
+     name:@"frontpageretrieved"
+     object:nil ];
+    
     //Log into reddit
     //If there are no saved user details
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"username"] == nil) {
@@ -195,6 +258,16 @@ int Returned;
         txtUsername.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
         txtPassword.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     }
+    
+    //Set Refresh
+    BOOL refresh = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Refresh"] boolValue];
+    if (refresh) {
+        [swtRefresh setOn:YES animated:NO];
+    }else{
+        [swtRefresh setOn:NO animated:NO];
+    }
+    
+    
     
     //Set Number of threads
     [self LoadThreadsSettings];
@@ -209,7 +282,10 @@ int Returned;
 
 
 -(void)LogIntoRedditWithUser: (NSString*) user WithPassword: (NSString*) password  {
-   // dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    if (networkReachable()==NO) {
+        [self DisplayNetworkAlert];
+        return;
+    }
     
     lblStatus.text = @"Logging into Reddit...";
     
@@ -255,12 +331,12 @@ int Returned;
     
 }
 
-
-
-
-//Seperate method for getting a single subreddit, will require another request to reddit
-
 -(void)GetSubscribedSubreddits {
+    if (networkReachable()==NO) {
+        [self DisplayNetworkAlert];
+        return;
+    }
+    
     lblStatus.text = @"Retrieving Subreddit information...";
     [self.SubscribedSubreddits removeAllObjects];
     
@@ -290,9 +366,14 @@ int Returned;
 }
 
 -(void)GetTopLinksOfSubreddit: (NSString*) subredditName {
-    //Deactivate Load button
-    [self.btnLoad setEnabled:NO];
-    //Tell user you are loading the subreddit data
+    
+    if (networkReachable()==NO) {
+        [self DisplayNetworkAlert];
+        return;
+    }
+        //Tell user you are loading the subreddit data
+    
+    
     
     
     
@@ -300,11 +381,26 @@ int Returned;
         if([[self LinksDictionary] objectForKey:subredditName] == nil) {
             //The subreddit does not exist in our dictionary
            //Get links for subreddit
+            //Deactivate Load button
+            [self.btnLoad setEnabled:NO];
+
             //Add 1 to the count of reddits searching for links
             Searching++;
+           
+            NSMutableString *mutString;
+            mutString = [NSMutableString stringWithString: @"Fetching top links from /r/"];
+            [mutString appendString:subredditName];
+            [mutString appendString:@"..."];
+            lblStatus.text = mutString;
             
         [[RKClient sharedClient] linksInSubredditWithName:subredditName pagination:nil completion:^(NSArray *links, RKPagination *pagination, NSError *error) {
             NSLog(@"Retrieved %lu Links from /r/%@: ",(unsigned long)[links count], subredditName);
+            
+            NSMutableString *mutString2;
+            mutString2 = [NSMutableString stringWithString: @"Retrieved links from /r/"];
+            [mutString2 appendString:subredditName];
+            
+            lblStatus.text = mutString2;
             
             // Add subreddit links to dictionary
             //subredditName = Key, links = Object to store
@@ -326,107 +422,96 @@ int Returned;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*
-- (void) CreateTabForURL: (NSString*) URL WithTitle: (NSString*) title {
-    //Load a webview controller for a provided link
-    WebViewController *Tab = [[WebViewController alloc] init];
-    // Set a title for each view controller. These will also be names of each tab
-    
-    
-    
-    //@"http://www.reddit.com/r/funny/comments/2gl2lm/i_wasnt_shocked_when_a_picture_of_me_made_it_to/.compact"
-   // NSString *fullPath = [NSString stringWithFormat:@"http://www.reddit.com%@.compact", URL];
-    
-    NSLog(@"Creating tab for: %@", URL);
-    
-    Tab.title = title;
-    Tab.URL = URL;
-    //Tab.ThreadName
-    
-    [[[DatabaseModel sharedManager] ActiveTabs] addObject:Tab];
-    NSLog(@"Active Tabs: %d", [[[DatabaseModel sharedManager] ActiveTabs] count]);
-   
-} */
 
+-(void) RefreshThreads {
+    if (networkReachable()==NO) {
+        [self DisplayNetworkAlert];
+        return;
+    }
+    
+    //Check if refresh is enabled
+    BOOL refresh = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Refresh"] boolValue];
+    if (refresh) {
 
-
-- (void) CreateTabForURL: (RKLink*) Link {
-    //Load a webview controller for a provided link
-    WebViewController *Tab = [[WebViewController alloc] init];
-    // Set a title for each view controller. These will also be names of each tab
-    NSString *path = [Link.URL absoluteString];
     
+    NSLog(@"Refreshing Threads");
+    [self PopulateLinks];
     
-    //@"http://www.reddit.com/r/funny/comments/2gl2lm/i_wasnt_shocked_when_a_picture_of_me_made_it_to/.compact"
-    // NSString *fullPath = [NSString stringWithFormat:@"http://www.reddit.com%@.compact", URL];
-    
-    NSLog(@"Creating tab for: %@", Link.URL);
-    
-    Tab.title = Link.subreddit;
-    Tab.URL = path;
-    Tab.ThreadName = Link.title;
-    
-    
-    UIWebView *webview =[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320,517)];
-    NSURL *nsurl=[NSURL URLWithString:path];
-    NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
-    [webview loadRequest:nsrequest];
-    
-    Tab.wv = webview;
-    
-    [[[DatabaseModel sharedManager] ActiveTabs] addObject:Tab];
-    [self.tabBarController setViewControllers:[[DatabaseModel sharedManager] ActiveTabs]];
-    self.tabBarController.selectedIndex = [[[DatabaseModel sharedManager] ActiveTabs] count];
+    if ([[[DatabaseModel sharedManager] ActiveThreads] count] > 0) {
+        ThreadsViewController *threadsViewController;
+        self.ThreadsViewController = threadsViewController;
+        self.ThreadsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"threadsViewController"];
+        
+        [[DatabaseModel sharedManager] setRefresh:NO];
+        [self.ThreadsViewController SetUpWebViews];
+        [self.ThreadsViewController AnimateFirstWebview];
+        [self.navigationController pushViewController:self.ThreadsViewController animated:YES];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.navigationController.navigationBar.hidden = NO;
+        self.btnGoToThreads.hidden = NO;
+        
+        [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
+        self.backgroundTask = UIBackgroundTaskInvalid;
+        
+    }else{
+        //We don't have any threads. Don't load next view. Tell user
+        //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Something went wrong when trying to load from the selected subreddits.  Please wait a minute then try again" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+        //[alert show];
+        
+    }
+    }
     
 }
 
-
-//Keep seperate array of links that have been loaded in the session
-//Allow user to check whether they want to load the top threads or new threads
-
-- (IBAction)LoadPressed:(id)sender {
-    
+-(void)PopulateLinks {
     [[[DatabaseModel sharedManager] ActiveThreads] removeAllObjects];
     
-        RKLink *link;
+    RKLink *link;
     
     //For each selected subreddit, Create a tab for each top link
-    //[self.SelectedSubreddits count]
-    for (int i=0; i<[self.SelectedSubreddits count]; i++) {
-        
-        //change this to while that only breaks after either its loaded the right num of threads or it's search x amount of threads
-        int x = 0;
-        while (x !=[[DatabaseModel sharedManager] NumberOfThreads]) {
-            
-        }
-        
-        
-        
+    for (int i=0; i<[[[DatabaseModel sharedManager] SelectedSubreddits]  count]; i++) {
         for (int x=0; x<[[DatabaseModel sharedManager] NumberOfThreads]; x++) {
-           
-        //Access the array of links sitting in the dictionary for the given subreddit and assign the top URL
-        link = self.LinksDictionary[self.SelectedSubreddits[i]][x];
-        //Check if link is a sticky, if it is get a new link to load
-        if (link.stickied) {
-            //Don't load, instead load an extra thread further down the subreddit
-            //Set link as the next thread after the limit specified by the user
-            link = self.LinksDictionary[self.SelectedSubreddits[i]][[[DatabaseModel sharedManager] NumberOfThreads]];
-        }
             
+            //Access the array of links sitting in the dictionary for the given subreddit and assign the top URL
+            link = self.LinksDictionary[[[DatabaseModel sharedManager] SelectedSubreddits] [i]][x];
+            //Check if link is a sticky, if it is get a new link to load
+            if (link.stickied) {
+                //Don't load, instead load an extra thread further down the subreddit
+                //Set link as the next thread after the limit specified by the user
+                link = self.LinksDictionary[[[DatabaseModel sharedManager] SelectedSubreddits] [i]][[[DatabaseModel sharedManager] NumberOfThreads]];
+            }
             NSString *path = [link.URL absoluteString];
-        
+            
             //Add this Link to the Threads array to be loaded by the next view controller
             NSLog(path);
             
             //Check if link is nil
             if (!link) {
             }else{
+                
+                //Check if we already have loaded this one....
+                
+                
+                
+                
                 [[[DatabaseModel sharedManager] ActiveThreads] addObject:link];
             }
-            
+        }
     }
-        
+    
+}
+
+//Keep seperate array of links that have been loaded in the session
+//Allow user to check whether they want to load the top threads or new threads
+
+- (IBAction)LoadPressed:(id)sender {
+    
+    if (networkReachable()==NO) {
+        [self DisplayNetworkAlert];
+        return;
     }
+    
+    [self PopulateLinks];
     
     if ([[[DatabaseModel sharedManager] ActiveThreads] count] > 0) {
         ThreadsViewController *threadsViewController;
@@ -437,6 +522,7 @@ int Returned;
         [self.navigationController pushViewController:self.ThreadsViewController animated:YES];
         [self.navigationController setNavigationBarHidden:NO animated:YES];
         self.navigationController.navigationBar.hidden = NO;
+        self.btnGoToThreads.hidden = NO;
     }else{
         //We don't have any threads. Don't load next view. Tell user
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Something went wrong when trying to load from the selected subreddits.  Please wait a minute then try again" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
@@ -448,6 +534,61 @@ int Returned;
     
     
 }
+
+
+- (IBAction)LoadFrontPagePressed:(id)sender {
+    if (networkReachable()==NO) {
+        [self DisplayNetworkAlert];
+        return;
+    }
+    //Get Front page links
+    [[RKClient sharedClient] frontPageLinksWithPagination:nil completion:^(NSArray *links, RKPagination *pagination, NSError *error) {
+        
+        NSLog(@"Retrieved %lu FrontPage links",(unsigned long)[links count]);
+        
+        // Add subreddit links to dictionary
+        //subredditName = Key, links = Object to store
+        self.LinksDictionary[@"frontpage"] = links;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"frontpageretrieved" object:self];
+    }];
+    
+}
+-(void)LoadFrontPage {
+    
+    if (networkReachable()==NO) {
+        [self DisplayNetworkAlert];
+        return;
+    }
+    
+    [[[DatabaseModel sharedManager] ActiveThreads] removeAllObjects];
+    
+    NSArray *frontpage;
+    frontpage = [[self LinksDictionary] objectForKey:@"frontpage"];
+
+    //Add each front page link to the active threads array
+    for (int i = 0; i < [frontpage count]; i++) {
+        [[[DatabaseModel sharedManager] ActiveThreads] addObject:frontpage[i]];
+    }
+    if ([[[DatabaseModel sharedManager] ActiveThreads] count] > 0) {
+        ThreadsViewController *threadsViewController;
+        self.ThreadsViewController = threadsViewController;
+        self.ThreadsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"threadsViewController"];
+        
+        [[DatabaseModel sharedManager] setRefresh:YES];
+        [self.navigationController pushViewController:self.ThreadsViewController animated:YES];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.navigationController.navigationBar.hidden = NO;
+        self.btnGoToThreads.hidden = NO;
+        
+    }else{
+        //We don't have any threads. Don't load next view. Tell user
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Something went wrong when trying to load from the selected subreddits.  Please wait a minute then try again" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+        [alert show];
+        
+    }
+
+}
+
 - (IBAction)ThreadsPressed:(id)sender {
     //Check if we have threads loaded, if so push the vc
     if (self.ThreadsViewController != nil) {
@@ -469,25 +610,31 @@ int Returned;
     
     SubredditTableViewCell *cell;
     cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if (networkReachable()==NO) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [self DisplayNetworkAlert];
+        return;
+    }
 
         //If the cell is not checked
         if ([self.CheckedCells[indexPath.row] isEqualToString:@"NO"]) {
             //Limit to 5 selected subreddits
-            if ([self.SelectedSubreddits count] < 5) {
+            if ([[[DatabaseModel sharedManager] SelectedSubreddits] count] < 5) {
                 //Tag as checked
                 self.CheckedCells[indexPath.row] = @"YES";
                 //Add the subreddit name from the selected cell to our selected array
-                [[self SelectedSubreddits] addObject:cell.lblSubredditName.text];
+                [[[DatabaseModel sharedManager] SelectedSubreddits]  addObject:cell.lblSubredditName.text];
                 [self GetTopLinksOfSubreddit:cell.lblSubredditName.text];
             }
         }else{
             //Tag as unchecked
             self.CheckedCells[indexPath.row] = @"NO";
             //Remove the subreddit name from the selected cell from our selected array
-            NSInteger count = [self.SelectedSubreddits count];
+            NSInteger count = [[[DatabaseModel sharedManager] SelectedSubreddits]  count];
             for (NSInteger index = (count - 1); index >= 0; index--) {
-                if ([self.SelectedSubreddits[index] isEqualToString:cell.lblSubredditName.text]) {
-                    [self.SelectedSubreddits removeObjectAtIndex:index];
+                if ([[[DatabaseModel sharedManager] SelectedSubreddits] [index] isEqualToString:cell.lblSubredditName.text]) {
+                    [[[DatabaseModel sharedManager] SelectedSubreddits]  removeObjectAtIndex:index];
                 }
             }
         }
@@ -538,19 +685,34 @@ int Returned;
     if (self.SettingsView.frame.origin.y == 1000) {
         //Animate view onto screen
         [UIView animateWithDuration:0.4 animations:^{
-        self.SettingsView.frame = CGRectMake(0, 127, 320, 441);
+        self.SettingsView.frame = CGRectMake(5, 185, 310, 441);
         }];
     }else{
         //Animate off screen
         [UIView animateWithDuration:0.4 animations:^{
-            self.SettingsView.frame = CGRectMake(0, 1000, 320, 441);
+            self.SettingsView.frame = CGRectMake(5, 1000, 310, 441);
         }];
     }
     
     
 }
+- (IBAction)RefreshToggled:(id)sender {
+    //Set User default
+    //Commit details to NS User defaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    //Check if refresh is enabled
+    bool refresh = swtRefresh.isOn;
+
+    [userDefaults setObject:[NSNumber numberWithBool:refresh] forKey:@"Refresh"];
+    [userDefaults synchronize];
+    NSLog(swtRefresh.isOn ? @"Refresh set to on" : @"Refresh set to off");
+}
 
 - (IBAction)LogInPressed:(id)sender {
+    if (networkReachable()==NO) {
+        [self DisplayNetworkAlert];
+        return;
+    }
     //Check txt boxes have entered text
     if (txtPassword.text.length > 0 && txtUsername.text.length > 0) {
         //Try to log in with the entries
@@ -644,21 +806,37 @@ int Returned;
     UIActivityIndicatorView *tmpimg = (UIActivityIndicatorView *)[self.view viewWithTag:1];
     [tmpimg removeFromSuperview];
     //Hide load things
-    self.lblStatus.hidden = YES;
+    self.lblStatus.text = @"Subreddits retrieved";
     self.imgLoad.hidden = YES;
     
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.5];
-    [self.tblReddits setAlpha:0];
-    [self.btnLoad setAlpha:0];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    //If settings is hidden off screen animate otherwise just display
+   // if (self.SettingsView.frame.origin.y == 1000) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:1.5];
+        [self.tblReddits setAlpha:0];
+        [self.btnLoad setAlpha:0];
+        //[self.btnLoadFrontPage setAlpha:0];
+        [self.lblOr setAlpha:0];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     
-    [self.tblReddits setHidden:NO];
-    [self.tblReddits setAlpha:1];
-    [self.btnLoad setHidden:NO];
-    [self.btnLoad setAlpha:1];
+        [self.lblOr setHidden:NO];
+        [self.lblOr setAlpha:1];
+       // [self.btnLoadFrontPage setHidden:NO];
+      //  [self.btnLoadFrontPage setAlpha:1];
+        [self.tblReddits setHidden:NO];
+        [self.tblReddits setAlpha:1];
+        [self.btnLoad setHidden:NO];
+        [self.btnLoad setAlpha:1];
     
-    [UIView commitAnimations];
+        [UIView commitAnimations];
+    
+   // }else{
+    //    [self.tblReddits setHidden:NO];
+    //    [self.btnLoad setHidden:NO];
+   // }
+
+    
+    
     
     
 }
@@ -667,5 +845,59 @@ int Returned;
     NSLog(@"Retrieved Links was notified");
     
 }
+-(void)FrontPageRetrievedWasNotified: (NSNotification *) notification
+{
+    NSLog(@"Front Page Retrieved was notified");
+    [self LoadFrontPage];
+}
+
+
+-(void) DisplayNetworkAlert {
+    
+}
+BOOL networkReachable()
+{
+    struct sockaddr_in zeroAddress;
+    bzero(&zeroAddress, sizeof(zeroAddress));
+    zeroAddress.sin_len = sizeof(zeroAddress);
+    zeroAddress.sin_family = AF_INET;
+    
+    SCNetworkReachabilityRef reachabilityRef = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *) &zeroAddress);
+    
+    SCNetworkReachabilityFlags flags;
+    if (SCNetworkReachabilityGetFlags(reachabilityRef, &flags)) {
+        if ((flags & kSCNetworkReachabilityFlagsReachable) == 0) {
+            // if target host is not reachable
+            return NO;
+        }
+        
+        if ((flags & kSCNetworkReachabilityFlagsConnectionRequired) == 0) {
+            // if target host is reachable and no connection is required
+            //  then we'll assume (for now) that your on Wi-Fi
+            return YES; // This is a wifi connection.
+        }
+        
+        
+        if ((((flags & kSCNetworkReachabilityFlagsConnectionOnDemand ) != 0)
+             ||(flags & kSCNetworkReachabilityFlagsConnectionOnTraffic) != 0)) {
+            // ... and the connection is on-demand (or on-traffic) if the
+            //     calling application is using the CFSocketStream or higher APIs
+            
+            if ((flags & kSCNetworkReachabilityFlagsInterventionRequired) == 0) {
+                // ... and no [user] intervention is needed
+                return YES; // This is a wifi connection.
+            }
+        }
+        
+        if ((flags & kSCNetworkReachabilityFlagsIsWWAN) == kSCNetworkReachabilityFlagsIsWWAN) {
+            // ... but WWAN connections are OK if the calling application
+            //     is using the CFNetwork (CFSocketStream?) APIs.
+            return YES; // This is a cellular connection.
+        }
+    }
+    
+    return NO;
+}
+
 
 @end

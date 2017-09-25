@@ -18,7 +18,12 @@
 @implementation DatabaseModel
 
 
-
+-(NSMutableArray *) SelectedSubreddits{
+    if (!_SelectedSubreddits) {
+        _SelectedSubreddits = [[NSMutableArray alloc]init];
+    }
+    return _SelectedSubreddits;
+}
 -(NSMutableArray *) ActiveTabs{
     if (!_ActiveTabs) {
         _ActiveTabs = [[NSMutableArray alloc]init];

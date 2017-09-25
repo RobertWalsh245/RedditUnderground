@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, retain) NSString *DeviceID;
+@property (nonatomic, retain) NSMutableArray *SelectedSubreddits;
 @property (nonatomic, retain) NSMutableArray *ActiveTabs;
 @property (nonatomic, retain) NSMutableArray *ActiveThreads;
 @property (nonatomic, retain) NSMutableArray *LoadedWebViews;

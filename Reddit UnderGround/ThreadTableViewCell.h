@@ -11,5 +11,6 @@
 @interface ThreadTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *lblThreadName;
 @property (strong, nonatomic) IBOutlet UILabel *lblSubredditName;
+@property (strong, nonatomic) IBOutlet UIImageView *check;
 
 @end
